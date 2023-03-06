@@ -14,7 +14,7 @@
 const fs = require('fs')
 const path = require('path')
 
-const appPath = path.resolve(__dirname, './src/main.js')
+const appPath = path.resolve(__dirname, '../../src/main.js')
 //여기서 지금 자꾸 cache 디렉토리에 접근한다.
 
 let appFile = fs.readFileSync(appPath, { encoding: 'utf-8' })
