@@ -14,7 +14,7 @@
 const fs = require('fs')
 const path = require('path')
 
-const appPath = path.resolve(__dirname, '../../src/main.js')
+const appPath = path.resolve(__dirname, '../src/main.js')
 
 let appFile = fs.readFileSync(appPath, { encoding: 'utf-8' })
 
