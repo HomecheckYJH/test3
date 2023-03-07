@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div class="hck-autocomplete" :class="random" @keyup="keyup">
         <input v-model="InputValue"  :class="open? '' : 'closed'" style="width:100%" @keyup="openExpand('force')" @click="openExpand('force')"/>
         <span v-show="!open" style="position:absolute; left: 0 ; padding: 6px 10px">{{InnerValue}}</span>
@@ -31,7 +31,35 @@ const open = ref(false)
 const InputValue = ref('')
 const InnerValue = ref(computed(()=>{
     return _.join( Selected.value, ', ')
-}))
+})) -->
+<template>
+    <div class="hck-autocomplete" :class="random" @keyup="keyup">
+      <input v-model="InputValue" :class="[open ? '' : 'closed']" style="width:100%" @keyup="openExpand('force')" @click="openExpand('force')" />
+      <span v-show="!open" style="position:absolute; left: 0 ; padding: 6px 10px">{{InnerValue}}</span>
+      <i class="bx bx-search" style="position:absolute; top: 9px; right: 12px;"></i>
+      <transition name="autocomplete">
+        <div v-if="open" class="expand" ref="Expand">
+          <UIButton v-if="props.addItem" class="item" style="text-align:center; color:var(--primary)" @click="addItem">
+            추가하기
+          </UIButton>
+          <div class="item" :class="[item === Selected ? 'selected' : '', i === SelectedIndex ? 'highlight' : '']" v-for="(item, i) in Items" :key="i" @click="changeSelection(item)">
+            <input v-model="checked[item]" type="checkbox" />
+            {{item}}
+          </div>
+          <div></div>
+        </div>
+      </transition>
+    </div>
+  </template>
+  <script setup>
+  import * as _ from 'lodash'
+  import { onClickOutside } from '@vueuse/core'
+  const checked = ref({})
+  const open = ref(false)
+  const InputValue = ref('')
+  const InnerValue = computed(() => {
+    return _.join(Selected.value, ', ')
+  })
 
     const Expand = ref(null)
 const random = `hck-autocomplete-${useUI().common.rstr(5,false)}`
