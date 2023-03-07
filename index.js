@@ -85,7 +85,7 @@ app.component('AnimationSpinner', AnimationSpinner);
 // app.component('TranshesCheckAccordion', TranshesCheckAccordion);
 app.component('TransitionExpand', TransitionExpand);
 
-export default { AnimationSpinner };
+export { AnimationSpinner };
 
 // Logo,Filedrop, 
 
