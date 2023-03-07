@@ -4,7 +4,7 @@ import { createApp } from 'vue'
 const app = createApp({})
 
 // import { Accordion } from './components/Accordion.vue';
-import {AnimationSpinner} from './components/AnimationSpinner.vue';
+import {default as AnimationSpinner} from './components/AnimationSpinner.vue';
 // import {AnimationStatus} from './components/AnimationStatus.vue';
 // import {Autocomplete} from './components/Autocomplete.vue';
 // import {AutocompleteSelect} from './components/AutocompleteSelect.vue';
