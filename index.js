@@ -1,5 +1,7 @@
 import './css/globalcss.css';
-import { createApp } from 'vue'
+import { createApp } from 'vue';
+import '@vueuse/core';
+import 'lodash';
 
 const app = createApp({})
 
