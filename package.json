@@ -9,7 +9,7 @@
   "dependencies": {
     "@imengyu/vue3-context-menu": "^1.2.3",
     "@vueuse/core": "^9.13.0",
-    "lodash": "^4.17.21",
+    "lodash": "3.10.1",
     "marked": "^4.2.12",
     "vue": "^3.2.47"
   },
@@ -22,9 +22,5 @@
   "bugs": {
     "url": "https://github.com/HomecheckYJH/test3/issues"
   },
-  "homepage": "https://github.com/HomecheckYJH/test3#readme",
-  "devDependencies": {
-    "@vueuse/core": "^9.13.0",
-    "lodash": "^4.17.21"
-  }
+  "homepage": "https://github.com/HomecheckYJH/test3#readme"
 }
