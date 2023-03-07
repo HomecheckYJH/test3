@@ -1,6 +1,9 @@
 import './css/globalcss.css';
 import { createApp } from 'vue';
 
+import { onClickOutside } from '@vueuse/core'
+import _ from 'lodash';
+
 const app = createApp({})
 
 import { default as Accordion } from './components/Accordion.vue';
@@ -85,4 +88,4 @@ app.component('ToggleMode', ToggleMode);
 app.component('TranshesCheckAccordion', TranshesCheckAccordion);
 app.component('TransitionExpand', TransitionExpand);
 
-export default { Accordion, AnimationSpinner, AnimationStatus, Autocomplete, AutocompleteSelect, Button, ButtonCard, ButtonIcon, Calendar, Card, Context, Date, Dropdown, DropdownFunctional, Filedrop, Frame, Grid, Hint, HintWrap, InputNumberpad, List, ListItem, Logo, Markdown, OverlayDrawer, OverlayDrawerFrame, OverlayIndicator, OverlayModal, OverlayNotifications, Placeholder, Quote, RadioGroupBtn, Step, Tab, TabContent, Tag, Toggle, ToggleMode, TranshesCheckAccordion, TransitionExpand };
+export default { Accordion, AnimationSpinner, AnimationStatus, Autocomplete, AutocompleteSelect, Button, ButtonCard, ButtonIcon, Calendar, Card, Context, Date, Dropdown, DropdownFunctional, Filedrop, Frame, Grid, Hint, HintWrap, InputNumberpad, List, ListItem, Logo, Markdown, OverlayDrawer, OverlayDrawerFrame, OverlayIndicator, OverlayModal, OverlayNotifications, Placeholder, Quote, RadioGroupBtn, Step, Tab, TabContent, Tag, Toggle, ToggleMode, TranshesCheckAccordion, TransitionExpand, onClickOutside };
