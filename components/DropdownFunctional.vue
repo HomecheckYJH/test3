@@ -32,7 +32,8 @@
 </template>
 <script setup>
 import { onClickOutside } from "@vueuse/core";
-import _ from "lodash";
+// import _ from "lodash";
+import * as _ from 'lodash';
 const emit = defineEmits(["update:modelValue", "onChanged"]);
 const props = defineProps({
   items: {
