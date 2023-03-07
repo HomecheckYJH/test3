@@ -1,7 +1,7 @@
 import './css/globalcss.css';
 import { createApp } from 'vue';
-import '@vueuse/core';
-import 'lodash';
+import Vueuse from '@vueuse/core';
+import lodash from 'lodash';
 
 const app = createApp({})
 
@@ -87,4 +87,4 @@ app.component('ToggleMode', ToggleMode);
 app.component('TranshesCheckAccordion', TranshesCheckAccordion);
 app.component('TransitionExpand', TransitionExpand);
 
-export default { Accordion, AnimationSpinner, AnimationStatus, Autocomplete, AutocompleteSelect, Button, ButtonCard, ButtonIcon, Calendar, Card, Context, Date, Dropdown, DropdownFunctional, Filedrop, Frame, Grid, Hint, HintWrap, InputNumberpad, List, ListItem, Logo, Markdown, OverlayDrawer, OverlayDrawerFrame, OverlayIndicator, OverlayModal, OverlayNotifications, Placeholder, Quote, RadioGroupBtn, Step, Tab, TabContent, Tag, Toggle, ToggleMode, TranshesCheckAccordion, TransitionExpand };
+export default { Accordion, AnimationSpinner, AnimationStatus, Autocomplete, AutocompleteSelect, Button, ButtonCard, ButtonIcon, Calendar, Card, Context, Date, Dropdown, DropdownFunctional, Filedrop, Frame, Grid, Hint, HintWrap, InputNumberpad, List, ListItem, Logo, Markdown, OverlayDrawer, OverlayDrawerFrame, OverlayIndicator, OverlayModal, OverlayNotifications, Placeholder, Quote, RadioGroupBtn, Step, Tab, TabContent, Tag, Toggle, ToggleMode, TranshesCheckAccordion, TransitionExpand, Vueuse, lodash };
