@@ -83,21 +83,4 @@ Vue.component('ToggleMode', ToggleMode);
 Vue.component('TranshesCheckAccordion', TranshesCheckAccordion);
 Vue.component('TransitionExpand', TransitionExpand);
 
-const fs = require('fs')
-const path = require('path')
-
-const appPath = path.resolve(__dirname, '../../src/main.js')
-//여기서 지금 자꾸 cache 디렉토리에 접근한다.
-// const appPath = path.resolve(process.cwd(), '../../src/main.js')
-// const appPath = path.join(__dirname, '..', '..', 'src', 'main.js');
-
-let appFile = fs.readFileSync(appPath, { encoding: 'utf-8' })
-// let appFile = fs.readFileSync('../../src/main.js', { encoding: 'utf-8' })
-
-
-if (!appFile.includes("../node_modules/yjhlib/css/globalcss.css")) {
-  appFile = `import "../node_modules/yjhlib/css/globalcss.css";\n` + appFile
-  fs.writeFileSync(appPath, appFile, { encoding: 'utf-8' })
-}
-
 export { Accordion, AnimationSpinner,AnimationStatus,Autocomplete,AutocompleteSelect,Button,ButtonCard,ButtonIcon,Calendar,Card,Context,Date,Dropdown,DropdownFunctional,Filedrop,Frame,Grid,Hint,HintWrap,InputNumberpad,List,ListItem,Logo,Markdown,OverlayDrawer,OverlayDrawerFrame,OverlayIndicator,OverlayModal,OverlayNotifications,Placeholder,Quote,RadioGroupBtn,Step,Tab,TabContent,Tag,Toggle,ToggleMode,TranshesCheckAccordion,TransitionExpand };
