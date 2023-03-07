@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/HomecheckYJH/test3/issues"
   },
-  "homepage": "https://github.com/HomecheckYJH/test3#readme"
+  "homepage": "https://github.com/HomecheckYJH/test3#readme",
+  "devDependencies": {
+    "@vueuse/core": "^9.13.0",
+    "lodash": "^4.17.21"
+  }
 }
