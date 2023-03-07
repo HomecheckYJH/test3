@@ -1,5 +1,9 @@
 import './css/globalcss.css';
 import Vue from 'vue';
+import { createApp } from 'vue'
+
+const app = createApp({})
+app.component('AnimationSpinner', AnimationSpinner)
 
 // import Accordion from './components/Accordion.vue';
 import {default as AnimationSpinner} from './components/AnimationSpinner.vue';
@@ -43,7 +47,7 @@ import {default as AnimationSpinner} from './components/AnimationSpinner.vue';
 // import TransitionExpand from './components/TransitionExpand.vue';
 
 // Vue.component('Accordion', Accordion);
-Vue.component('AnimationSpinner', AnimationSpinner);
+// Vue.component('AnimationSpinner', AnimationSpinner);
 // Vue.component('AnimationStatus', AnimationStatus);
 // Vue.component('Autocomplete', Autocomplete);
 // Vue.component('AutocompleteSelect', AutocompleteSelect);
