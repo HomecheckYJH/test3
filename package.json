@@ -7,9 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "vue": "^3.2.47",
+    "@imengyu/vue3-context-menu": "^1.2.3",
     "@vueuse/core": "^9.13.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "marked": "^4.2.12",
+    "vue": "^3.2.47"
   },
   "repository": {
     "type": "git",
