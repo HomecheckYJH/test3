@@ -23,19 +23,15 @@
 </template>
 
 <script setup>
-import { join } from 'lodash'
+import * as _ from 'lodash'
 // import _ from 'lodash'
 import { onClickOutside } from '@vueuse/core'
 const checked = ref({})
 const open = ref(false)
 const InputValue = ref('')
-// const InnerValue = ref(computed(()=>{
-//     return _.join( Selected.value, ', ')
-// }))
-
-const InnerValue = computed(() => {
-  return join(Selected.value, ', ')
-})
+const InnerValue = ref(computed(()=>{
+    return _.join( Selected.value, ', ')
+}))
 
     const Expand = ref(null)
 const random = `hck-autocomplete-${useUI().common.rstr(5,false)}`
