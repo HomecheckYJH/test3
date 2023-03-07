@@ -83,7 +83,7 @@ app.component('AnimationSpinner', AnimationSpinner);
 // app.component('Toggle', Toggle);
 // app.component('ToggleMode', ToggleMode);
 // app.component('TranshesCheckAccordion', TranshesCheckAccordion);
-app.component('TransitionExpand', TransitionExpand);
+// app.component('TransitionExpand', TransitionExpand);
 
 export { AnimationSpinner };
 
