@@ -46,5 +46,5 @@
 </template>
 
 <script>
-import Accordion from './Accordion.vue';
-</script>
+import { Accordion } from 'yjhlib'
+</script>y
