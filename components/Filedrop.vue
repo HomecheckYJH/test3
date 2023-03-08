@@ -44,7 +44,7 @@
 </template>
 <script setup lang="ts">
 import { useDropZone } from '@vueuse/core'
-import ContextMenu from '@imengyu/vue3-context-menu'
+import { ContextMenu } from '@imengyu/vue3-context-menu'
 
 
 
