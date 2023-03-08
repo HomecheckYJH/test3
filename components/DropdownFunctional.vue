@@ -119,7 +119,15 @@ const openChange = () => {
     let rect = document
       .getElementsByClassName(config.id)[0]
       .getBoundingClientRect();
-    if (process.client) {
+    // if (process.client) {
+    //   if (rect.x + rect.width > window.innerWidth) {
+    //     config.right = true;
+    //   }
+    //   if (rect.y + rect.height + 50 > window.innerHeight) {
+    //     config.top = true;
+    //   }
+    // }
+    if (typeof process !== "undefined" && process.client) {
       if (rect.x + rect.width > window.innerWidth) {
         config.right = true;
       }
