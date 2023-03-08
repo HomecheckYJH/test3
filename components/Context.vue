@@ -76,7 +76,7 @@ watch(()=> Hint.value,(to,from) =>{
 <script setup>
 import { onClickOutside } from '@vueuse/core';
 // import * as _ from 'lodash';
-import { debounce } from 'lodash';
+import debounce from 'lodash/debounce';
 import { ref, watch, onUnmounted } from 'vue';
 
 const props = defineProps({
