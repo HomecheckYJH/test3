@@ -7,10 +7,10 @@
           <img class="icon-forward" />
         </a>
         <!-- <span class="year">{{ modelValue.getFullYear() }}</span> -->
-        <span v-if="modelValue" class="year">{{modelValue.getFullYear()}}</span>
+        <span v-if="modelValue" class="year">{{ modelValue.getFullYear() }}</span>
         <!-- <span class="month">{{ addZero((modelValue.getMonth() + 1)) }}</span> -->
         <span v-if="modelValue" class="month">{{ addZero((modelValue.getMonth() + 1)) }}</span>
-        
+
         <a @click="nextMonth()">
           <img class="icon-forward rotate-180" />
         </a>
@@ -76,6 +76,11 @@ export default {
       return new Date(new Date(this.modelValue).setDate(this.modelValue.getDate() + (this.period ? this.period : 0)))
     },
     computed_dates: function () {
+      ////////////
+      if (!this.modelValue) {
+        return [];
+      }
+      ////////////
       let year = this.modelValue.getFullYear();
       let month = this.modelValue.getMonth() + 1;
 
