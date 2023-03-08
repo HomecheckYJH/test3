@@ -4,20 +4,25 @@
     </section>
 </template>
 <script setup>
-import { marked }  from 'marked';
+import { marked } from 'marked';
 
 const props = defineProps({
-      string: String
-    })
+    string: String
+})
 
-function mark(str){
-    return marked(str)
+// function mark(str) {
+//     return marked(str)
+// }
+function mark(str) {
+    if (!str) {
+        return '';
+    }
+    return marked(str);
 }
-
 
 </script>
 <style>
-.markdown-viewer{
+.markdown-viewer {
     --grey50: #f9fafb;
     --grey100: #f2f4f6;
     --grey200: #e5e8eb;
@@ -28,16 +33,16 @@ function mark(str){
     --grey700: #4e5968;
     --grey800: #333d4b;
     --grey900: #191f28;
-    --greyOpacity50: rgba(0,23,51,0.02);
-    --greyOpacity100: rgba(2,32,71,0.05);
-    --greyOpacity200: rgba(0,27,55,0.1);
-    --greyOpacity300: rgba(0,29,58,0.18);
-    --greyOpacity400: rgba(0,29,54,0.31);
-    --greyOpacity500: rgba(3,24,50,0.46);
-    --greyOpacity600: rgba(0,19,43,0.58);
-    --greyOpacity700: rgba(3,18,40,0.7);
-    --greyOpacity800: rgba(0,12,30,0.8);
-    --greyOpacity900: rgba(2,9,19,0.91);
+    --greyOpacity50: rgba(0, 23, 51, 0.02);
+    --greyOpacity100: rgba(2, 32, 71, 0.05);
+    --greyOpacity200: rgba(0, 27, 55, 0.1);
+    --greyOpacity300: rgba(0, 29, 58, 0.18);
+    --greyOpacity400: rgba(0, 29, 54, 0.31);
+    --greyOpacity500: rgba(3, 24, 50, 0.46);
+    --greyOpacity600: rgba(0, 19, 43, 0.58);
+    --greyOpacity700: rgba(3, 18, 40, 0.7);
+    --greyOpacity800: rgba(0, 12, 30, 0.8);
+    --greyOpacity900: rgba(2, 9, 19, 0.91);
     --white: #fff;
     --black: #000;
     --blue50: #e8f3ff;
@@ -110,15 +115,15 @@ function mark(str){
     --green700: #029359;
     --green800: #028450;
     --green900: #027648;
-    --whiteOpacity50: rgba(209,209,253,0.05);
-    --whiteOpacity100: rgba(217,217,255,0.11);
-    --whiteOpacity200: rgba(222,222,255,0.19);
-    --whiteOpacity300: rgba(224,224,255,0.27);
-    --whiteOpacity400: rgba(232,232,253,0.36);
-    --whiteOpacity500: rgba(242,242,255,0.47);
-    --whiteOpacity600: rgba(248,248,255,0.6);
-    --whiteOpacity700: rgba(253,253,255,0.75);
-    --whiteOpacity800: rgba(253,253,254,0.89);
+    --whiteOpacity50: rgba(209, 209, 253, 0.05);
+    --whiteOpacity100: rgba(217, 217, 255, 0.11);
+    --whiteOpacity200: rgba(222, 222, 255, 0.19);
+    --whiteOpacity300: rgba(224, 224, 255, 0.27);
+    --whiteOpacity400: rgba(232, 232, 253, 0.36);
+    --whiteOpacity500: rgba(242, 242, 255, 0.47);
+    --whiteOpacity600: rgba(248, 248, 255, 0.6);
+    --whiteOpacity700: rgba(253, 253, 255, 0.75);
+    --whiteOpacity800: rgba(253, 253, 254, 0.89);
     --whiteOpacity900: #fff;
     --inverseGrey50: #202027;
     --inverseGrey100: #2c2c35;
@@ -163,78 +168,89 @@ function mark(str){
 
 
 
-.markdown-viewer strong{
+.markdown-viewer strong {
     font-weight: 600;
-    color : rgb(25, 31, 40);
+    color: rgb(25, 31, 40);
 }
+
 .markdown-viewer h1,
 .markdown-viewer h2,
 .markdown-viewer h3 {
-    color : var(--grey800);
+    color: var(--grey800);
 }
-.markdown-viewer h1{
-    font-size : var(--font-size-h1);
+
+.markdown-viewer h1 {
+    font-size: var(--font-size-h1);
 }
-.markdown-viewer h2{
+
+.markdown-viewer h2 {
     font-weight: 500;
-    font-size : var(--font-size-h2);
+    font-size: var(--font-size-h2);
     text-align: center;
     line-height: 50px;
     margin-bottom: 50px;
 }
-.markdown-viewer h3{
+
+.markdown-viewer h3 {
     font-weight: 500;
-    margin : 62px 0 12px;
-    font-size : var(--font-size-h3);
+    margin: 62px 0 12px;
+    font-size: var(--font-size-h3);
 }
-.markdown-viewer h4{
-    margin : 62px 0 12px;
+
+.markdown-viewer h4 {
+    margin: 62px 0 12px;
     font-weight: 500;
-    color : rgb(25, 31, 40);
-    font-size : var(--font-size-h4);
+    color: rgb(25, 31, 40);
+    font-size: var(--font-size-h4);
 }
-.markdown-viewer p{
+
+.markdown-viewer p {
     font-weight: 300;
-    color : var(--grey700);
+    color: var(--grey700);
     font-size: var(--font-size-h7);
     margin-bottom: 30px;
 }
-.markdown-viewer li{
-    color : var(--grey700);
+
+.markdown-viewer li {
+    color: var(--grey700);
     font-size: var(--font-size-h7);
 }
+
 .markdown-viewer img {
-    width : 100%;
+    width: 100%;
     margin-bottom: 30px;
 }
+
 .markdown-viewer ol,
 .markdown-viewer ul {
     margin-bottom: 30px;
 }
+
 .markdown-viewer li {
     padding-left: 0em;
-    margin-bottom : 12px;
+    margin-bottom: 12px;
     font-weight: 400;
     line-height: 30px;
-    color : rgb(51, 61, 75);
+    color: rgb(51, 61, 75);
 }
-.markdown-viewer pre{
-    color : #818181;
-    font-size : 14px;
-    border : 0px;
-    padding : 1em 1.2em;
+
+.markdown-viewer pre {
+    color: #818181;
+    font-size: 14px;
+    border: 0px;
+    padding: 1em 1.2em;
     white-space: pre-line;
-    border-radius : 6px;
-    background-color : var(--greyOpacity100);
+    border-radius: 6px;
+    background-color: var(--greyOpacity100);
     line-height: 30px;
     font-weight: 300;
 }
 
-.markdown-viewer > blockquote{
+.markdown-viewer>blockquote {
     margin: 0 0 50px 0;
 }
 
-.markdown-viewer > blockquote > p {
+.markdown-viewer>blockquote>p {
     font-size: 18px;
     line-height: 30px;
     display: block;
@@ -243,15 +259,17 @@ function mark(str){
     text-decoration: none;
     background: transparent;
     white-space: pre-line;
-    margin:  0;
+    margin: 0;
     color: rgb(49, 130, 246);
 }
-.markdown-viewer > blockquote > p > strong{
+
+.markdown-viewer>blockquote>p>strong {
     color: rgb(49, 130, 246);
     font-weight: 600;
 }
-.markdown-viewer > blockquote > p::before{
-   content: "";
+
+.markdown-viewer>blockquote>p::before {
+    content: "";
     position: absolute;
     top: 0px;
     left: 0px;
@@ -262,18 +280,20 @@ function mark(str){
     margin: 0px;
 }
 
-.markdown-viewer > blockquote > blockquote{ 
+.markdown-viewer>blockquote>blockquote {
     margin: 0;
 }
-.markdown-viewer > blockquote > blockquote > p {
+
+.markdown-viewer>blockquote>blockquote>p {
     margin: 0;
     background: rgb(232, 243, 255);
-    padding : 1em 1.2em;
+    padding: 1em 1.2em;
     border-radius: 6px;
-    white-space: pre-line ;
-    font-size : 1em;
+    white-space: pre-line;
+    font-size: 1em;
 }
-.markdown-viewer > blockquote > blockquote > p > strong {
+
+.markdown-viewer>blockquote>blockquote>p>strong {
     color: rgb(25, 31, 40);
     line-height: 32px;
     font-size: 1.25em;
@@ -283,12 +303,10 @@ function mark(str){
 
 .markdown-viewer hr {
     border-color: var(--greyOpacity100);
-    margin : 0 0 24px;
+    margin: 0 0 24px;
 }
 
-.markdown-viewer br{
-   display: block;
-   margin: 10px 0;
-}
-
-</style>
+.markdown-viewer br {
+    display: block;
+    margin: 10px 0;
+}</style>
