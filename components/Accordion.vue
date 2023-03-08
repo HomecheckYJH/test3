@@ -36,7 +36,7 @@ export default {
   name: 'App',
   components: {
     TransitionExpand
-  }
+  },
 
   props: {
     type: {
