@@ -7,7 +7,7 @@
         </div>
         <i v-if="props.html" style="margin-left:10px;" class='bx bx-question-mark bx-border-circle'></i>
 </template>
-<script setup>
+<script setup lang="ts">
 const props = defineProps({
     html : String,
     modelValue : Boolean
