@@ -13,7 +13,7 @@
 </template>
 <script setup>
 import { onClickOutside } from '@vueuse/core'
-import { ref } from 'vue'
+import { ref, onUnmounted, watch } from 'vue'
 // import _ from 'lodash';
 import * as _ from 'lodash'
 
@@ -57,10 +57,10 @@ import * as _ from 'lodash'
 //     //}
 // })
 const props = defineProps({
-  modelValue: {
-    type: Boolean,
-    required: true
-  }
+    modelValue: {
+        type: Boolean,
+        required: true
+    }
 })
 const Hint = ref(null)
 const PositionX = ref(null)
@@ -71,35 +71,35 @@ const uniqueClass = ref(Math.random().toString(36).substr(2, 8))
 // const resizeEvent = _.debounce(moveElement, 100)
 let timerId;
 function debouncedMoveElement() {
-  clearTimeout(timerId);
-  timerId = setTimeout(moveElement, 100);
+    clearTimeout(timerId);
+    timerId = setTimeout(moveElement, 100);
 }
 const resizeEvent = debouncedMoveElement;
 ///////////////////////////////////
 
 window.addEventListener('resize', resizeEvent)
 onUnmounted(() => {
-  window.removeEventListener('resize', resizeEvent)
+    window.removeEventListener('resize', resizeEvent)
 })
 
 onClickOutside(Hint, event => {
-  emit('update:modelValue', false)
+    emit('update:modelValue', false)
 })
 
 function moveElement() {
-  if (!Hint.value) {
-    return
-  }
-  const element = Hint.value.getBoundingClientRect()
-  const width = element.width
-  const x = element.x
-  if (width + x + 20 > document.body.clientWidth) {
-    PositionX.value = `${width + x + 25 - document.body.clientWidth}`.split('.')[0]
-  }
+    if (!Hint.value) {
+        return
+    }
+    const element = Hint.value.getBoundingClientRect()
+    const width = element.width
+    const x = element.x
+    if (width + x + 20 > document.body.clientWidth) {
+        PositionX.value = `${width + x + 25 - document.body.clientWidth}`.split('.')[0]
+    }
 }
 
 watch(Hint, (to, from) => {
-  moveElement()
+    moveElement()
 })
 
 
