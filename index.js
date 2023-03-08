@@ -18,7 +18,7 @@ import { default as Context } from './components/Context.vue';
 import { default as Date } from './components/Date.vue';
 import { default as Dropdown } from './components/Dropdown.vue';
 import { default as DropdownFunctional } from './components/DropdownFunctional.vue';
-import { default as Filedrop } from './components/Filedrop.vue';
+// import { default as Filedrop } from './components/Filedrop.vue';
 import { default as Frame } from './components/Frame.vue';
 import { default as Grid } from './components/Grid.vue';
 import { default as Hint } from './components/Hint.vue';
@@ -59,7 +59,7 @@ app.component('Context', Context);
 app.component('Date', Date);
 app.component('Dropdown', Dropdown);
 app.component('DropdownFunctional', DropdownFunctional);
-app.component('Filedrop', Filedrop);
+// app.component('Filedrop', Filedrop);
 app.component('Frame', Frame);
 app.component('Grid', Grid);
 app.component('Hint', Hint);
@@ -86,8 +86,8 @@ app.component('ToggleMode', ToggleMode);
 app.component('TranshesCheckAccordion', TranshesCheckAccordion);
 app.component('TransitionExpand', TransitionExpand);
 
-export { Accordion, AnimationSpinner, AnimationStatus, Autocomplete, Button, ButtonCard, ButtonIcon, Calendar, Card, Context, Date, Dropdown, DropdownFunctional, Frame, Grid, Hint, HintWrap, InputNumberpad, List, ListItem, Markdown, OverlayDrawer, OverlayDrawerFrame, OverlayIndicator, OverlayModal, OverlayNotifications, Placeholder, Quote, RadioGroupBtn, Step, Tab, TabContent, Tag, Toggle, ToggleMode, TranshesCheckAccordion, TransitionExpand, AutocompleteSelect,Logo,Filedrop };
+export { Accordion, AnimationSpinner, AnimationStatus, Autocomplete, Button, ButtonCard, ButtonIcon, Calendar, Card, Context, Date, Dropdown, DropdownFunctional, Frame, Grid, Hint, HintWrap, InputNumberpad, List, ListItem, Markdown, OverlayDrawer, OverlayDrawerFrame, OverlayIndicator, OverlayModal, OverlayNotifications, Placeholder, Quote, RadioGroupBtn, Step, Tab, TabContent, Tag, Toggle, ToggleMode, TranshesCheckAccordion, TransitionExpand, AutocompleteSelect, Logo };
 
-// Logo,Filedrop, 
+// Logo,Filedrop,
 
 //

@@ -7,12 +7,12 @@
   </div>
 </div>
 </template>
-<script>
-// import '../css/globalcss.css'
+<script lang="ts">
 
 export default{
     props:["size"]
 }</script>
+
 <style scoped>
 
 *{

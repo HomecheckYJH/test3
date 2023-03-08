@@ -1,25 +1,50 @@
 <template>
-<div>
-<svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-<circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
-<path class="checkmark__check" fill="none" :d="mark" /></svg>
-</div>
+    <div>
+        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+            <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+            <path class="checkmark__check" fill="none" :d="mark" />
+        </svg>
+    </div>
 </template>
-<script>
-export default{
-    props : ['status'],
-    computed:{
-        mark(){
-            switch (this.status){
-                case 'ok' :
+<!-- <script lang="ts">
+export default {
+    props: ['status'],
+    computed: {
+        mark() {
+            switch (this.status) {
+                case 'ok':
                     return 'M14.1 27.2l7.1 7.2 16.7-16.8'
 
-                case 'failed' :
+                case 'failed':
                     return 'M16 16 36 36 M36 16 16 36'
             }
         }
     }
 }
+</script> -->
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  props: {
+    status: String
+  },
+  computed: {
+    mark(): string {
+      switch (this.status) {
+        case 'ok':
+          return 'M14.1 27.2l7.1 7.2 16.7-16.8'
+
+        case 'failed':
+          return 'M16 16 36 36 M36 16 16 36'
+
+        default:
+          return ''
+      }
+    }
+  }
+})
 </script>
 
 
@@ -37,9 +62,10 @@ https://codepen.io/kuvinod5/pen/WNvzazr
     stroke: var(--primary);
     stroke-miterlimit: 10;
     animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
-    position:relative;
-   margin: 0 auto;
+    position: relative;
+    margin: 0 auto;
 }
+
 .checkmark__circle {
     stroke-dasharray: 166;
     stroke-dashoffset: 166;
@@ -47,7 +73,7 @@ https://codepen.io/kuvinod5/pen/WNvzazr
     stroke-miterlimit: 10;
     stroke: var(--primary);
     animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
- 
+
 }
 
 .checkmark__check {
@@ -64,13 +90,13 @@ https://codepen.io/kuvinod5/pen/WNvzazr
 }
 
 @keyframes scale {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: none;
     }
 
     50% {
         transform: scale3d(1.1, 1.1, 1);
     }
-}
-
-</style>
+}</style>
