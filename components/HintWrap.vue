@@ -17,7 +17,51 @@ import { ref } from 'vue'
 // import _ from 'lodash';
 import * as _ from 'lodash'
 
-const props = defineProps({ modelValue: Boolean })
+// const props = defineProps({ modelValue: Boolean })
+// const Hint = ref(null)
+// const PositionX = ref(null)
+
+// const emit = defineEmits(['update:modelValue'])
+// const uniqueClass = ref(useNuxtApp().$common.randomString(8, false))
+// const resizeEvent = _.debounce(moveElement, 100)
+
+// window.addEventListener("resize", resizeEvent);
+// onUnmounted(() => {
+//     window.removeEventListener("resize", resizeEvent)
+// })
+
+// onClickOutside(Hint, (event) => {
+//     emit("update:modelValue", false)
+// })
+
+
+// function moveElement() {
+//     if (!Hint.value) {
+//         return;
+//     }
+//     let element = Hint.value.getBoundingClientRect()
+//     let width = element.width
+//     let x = element.x
+//     if ((width + x + 20) > document.body.clientWidth) {
+//         //console.log('element : ',element)
+//         //console.log('hint :',(width + x + 20))
+//         //console.log('vw',document.body.clientWidth)
+//         PositionX.value = `${(width + x + 25) - document.body.clientWidth}`.split('.')[0]
+//     }
+// }
+
+// watch(() => Hint.value, (to, from) => {
+//     //if(to)
+//     //{
+//     moveElement();
+//     //}
+// })
+const props = defineProps({
+  modelValue: {
+    type: Boolean,
+    required: true
+  }
+})
 const Hint = ref(null)
 const PositionX = ref(null)
 
@@ -25,37 +69,31 @@ const emit = defineEmits(['update:modelValue'])
 const uniqueClass = ref(useNuxtApp().$common.randomString(8, false))
 const resizeEvent = _.debounce(moveElement, 100)
 
-window.addEventListener("resize", resizeEvent);
+window.addEventListener("resize", resizeEvent)
 onUnmounted(() => {
-    window.removeEventListener("resize", resizeEvent)
+  window.removeEventListener("resize", resizeEvent)
 })
 
 onClickOutside(Hint, (event) => {
-    emit("update:modelValue", false)
+  emit("update:modelValue", false)
 })
-
 
 function moveElement() {
-    if (!Hint.value) {
-        return;
-    }
-    let element = Hint.value.getBoundingClientRect()
-    let width = element.width
-    let x = element.x
-    if ((width + x + 20) > document.body.clientWidth) {
-        //console.log('element : ',element)
-        //console.log('hint :',(width + x + 20))
-        //console.log('vw',document.body.clientWidth)
-        PositionX.value = `${(width + x + 25) - document.body.clientWidth}`.split('.')[0]
-    }
+  if (!Hint.value) {
+    return
+  }
+  const element = Hint.value.getBoundingClientRect()
+  const width = element.width
+  const x = element.x
+  if (width + x + 20 > document.body.clientWidth) {
+    PositionX.value = `${width + x + 25 - document.body.clientWidth}`.split('.')[0]
+  }
 }
 
-watch(() => Hint.value, (to, from) => {
-    //if(to)
-    //{
-    moveElement();
-    //}
+watch(Hint, (to, from) => {
+  moveElement()
 })
+
 
 </script>
 <style scoped>
