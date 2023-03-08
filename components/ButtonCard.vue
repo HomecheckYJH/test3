@@ -1,51 +1,61 @@
+<!-- <template>
+  <NuxtLink :to="to ? to : ''" @click="click_event(click)" class="card-btn common-border common-border-8"
+    :class="{ disabled: disabled == true }" v-wave="disabled ? false : { color: '#aaa' }">
+    <div :class="{ 'common-space-between': type == 'inline' }">
+      <slot />
+      <span class="card-title">{{ title }}</span>
+      <img v-if="type == 'inline'" class="icon-more">
+    </div>
+
+  </NuxtLink>
+</template> -->
 <template>
-<NuxtLink :to="to ? to : ''"  @click="click_event(click)" 
-class="card-btn common-border common-border-8"
-:class="{disabled : disabled == true }"
-v-wave="disabled ? false : {color:'#aaa'}"
->
-        <div :class="{'common-space-between' : type == 'inline'}">
-        <slot/>
-        <span class="card-title">{{title}}</span>
-        <img v-if="type == 'inline'" class="icon-more">
-        </div>
-        
-    </NuxtLink>
+  <router-link :to="to ? to : ''" @click="click_event(click)" class="card-btn common-border common-border-8"
+    :class="{ disabled: disabled == true }" v-wave="disabled ? false : { color: '#aaa' }">
+    <div :class="{ 'common-space-between': type == 'inline' }">
+      <slot />
+      <span class="card-title">{{ title }}</span>
+      <img v-if="type == 'inline'" class="icon-more">
+    </div>
+  </router-link>
 </template>
 <script>
+
+<script>
 export default {
-    props:['type','to', 'title', 'disabled', 'click', 'dev'],
-    
-    methods:{
-        async click_event(fun){
-          if(fun instanceof Function){
-             
-             await fun()
-            }
-            
-        }
+  props: ['type', 'to', 'title', 'disabled', 'click', 'dev'],
+
+  methods: {
+    async click_event(fun) {
+      if (fun instanceof Function) {
+
+        await fun()
+      }
+
     }
+  }
 }
 </script>
 
 
 <style scoped>
-.card-btn{
-    display: block;
+.card-btn {
+  display: block;
   margin: 10px 20px;
   padding: 16px 20px;
   text-decoration: none;
   background: #fff;
 }
-.card-btn.disabled{
+
+.card-btn.disabled {
   cursor: not-allowed;
   background: #fcfcfc;
 }
 
 
 
-.card-title{
-    align-self: center;
+.card-title {
+  align-self: center;
   font-family: NotoSansKR;
   font-size: 13.5px;
   font-weight: normal;
@@ -58,8 +68,8 @@ export default {
 }
 
 
-.icon-more{
+.icon-more {
   object-fit: contain;
-     content:url("./assets/img/icn_more.svg");
+  content: url("./assets/img/icn_more.svg");
 }
 </style>
