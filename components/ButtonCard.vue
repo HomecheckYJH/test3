@@ -19,7 +19,6 @@
     </div>
   </router-link>
 </template>
-<script>
 
 <script>
 export default {
