@@ -33,9 +33,14 @@ props: ["items",'index'],
       }
 
   },
-  mounted(){
-      this.inner_index = this.index.index ? this.index.index : 0
+//   mounted(){
+//       this.inner_index = this.index.index ? this.index.index : 0
+//   }
+mounted() {
+  if (this.index && this.index.index) {
+    this.inner_index = this.index.index;
   }
+}
 }
 </script>
 <style scoped>
