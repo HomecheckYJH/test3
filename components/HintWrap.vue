@@ -74,6 +74,7 @@ function debouncedMoveElement() {
     clearTimeout(timerId);
     timerId = setTimeout(moveElement, 100);
 }
+
 const resizeEvent = debouncedMoveElement;
 ///////////////////////////////////
 
