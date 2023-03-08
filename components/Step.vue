@@ -3,8 +3,6 @@
         <div class="d-f" style="flex:1; flex-direction:column;">
             <slot name="header" />
 
-
-
             <div class="step-contents" style=" flex:1">
                 <transition :name="stepTransition" duration="350">
                     <div class="step-component" v-if="props.index == 0">
@@ -39,10 +37,6 @@
                 </transition>
             </div>
 
-
-
-
-
         </div>
         <slot name="footer" />
     </div>
@@ -64,10 +58,6 @@ watch(() => props.index, (to, from) => {
         stepTransition.value = 'step-from'
     }
 })
-
-
-
-
 
 </script>
 <style scoped>
