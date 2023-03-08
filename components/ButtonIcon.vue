@@ -3,11 +3,15 @@
         <i v-wave class="bx" :class="[`bx-${toIcon(icon)}`]"></i>
     </div>
 </template>
-<script>
-export default {
-    props: ['align', 'icon'],
-    setup() {
-        function toIcon(icon) {
+<script lang="ts">
+import { defineComponent } from 'vue';
+export default defineComponent({
+    props: {
+        align: String,
+        icon: String
+    },
+    setup(props) {
+        function toIcon(icon: any): string {
             switch (icon) {
                 case 'close':
                     return 'x'
@@ -21,7 +25,25 @@ export default {
         }
         return { toIcon }
     }
-}
+})
+// export default {
+//     props: ['align', 'icon'],
+//     setup() {
+//         function toIcon(icon) {
+//             switch (icon) {
+//                 case 'close':
+//                     return 'x'
+//                 case 'edit':
+//                     return 'edit-alt'
+//                 case 'delete':
+//                     return 'trash'
+//                 default:
+//                     return icon
+//             }
+//         }
+//         return { toIcon }
+//     }
+// }
 </script>
 <style scoped>
 .icon-wrapper {
