@@ -35,7 +35,6 @@ import { onClickOutside } from "@vueuse/core";
 // import _ from "lodash";
 import * as _ from 'lodash';
 /////////////////////////////
-import { defineProps, defineEmits } from 'vue';
 import { computed, reactive, ref } from 'vue';
 /////////////////////////////
 
