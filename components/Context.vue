@@ -75,7 +75,8 @@ watch(()=> Hint.value,(to,from) =>{
 </script> -->
 <script setup>
 import { onClickOutside } from '@vueuse/core';
-import * as _ from 'lodash';
+// import * as _ from 'lodash';
+import { debounce } from 'lodash';
 import { ref, watch, onUnmounted } from 'vue';
 
 const props = defineProps({
@@ -95,7 +96,8 @@ const PositionX = ref(null);
 
 const emit = defineEmits(['update:modelValue']);
 const uniqueClass = ref(Math.random().toString(36).substring(7));
-const resizeEvent = _.debounce(moveElement, 100);
+// const resizeEvent = _.debounce(moveElement, 100);
+const resizeEvent = debounce(moveElement, 100);
 
 window.addEventListener('resize', resizeEvent);
 onUnmounted(() => {
