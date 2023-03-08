@@ -1,4 +1,5 @@
 import './css/globalcss.css';
+import './components/assets/img/logo_lg.png'
 import { createApp } from 'vue';
 
 const app = createApp({})
