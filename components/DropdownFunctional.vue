@@ -14,8 +14,8 @@
           config.right ? 'right' : '',
           config.top ? 'top' : '',
         ]">
-          <li v-for="(item, i) in total_items" :key="i"
-          @click="changeValue(item, i)" class="item" :class="{ active: innerIndex == i }" v-wave="{
+          <li v-for="(item, i) in total_items" :key="i" @click="changeValue(item, i)" class="item"
+            :class="{ active: innerIndex == i }" v-wave="{
               color: '#6a6a6a',
             }">
             {{ isLabel(item) }}
@@ -34,6 +34,11 @@
 import { onClickOutside } from "@vueuse/core";
 // import _ from "lodash";
 import * as _ from 'lodash';
+/////////////////////////////
+import { defineProps, defineEmits } from 'vue';
+import { computed, reactive, ref } from 'vue';
+/////////////////////////////
+
 const emit = defineEmits(["update:modelValue", "onChanged"]);
 const props = defineProps({
   items: {
@@ -62,7 +67,7 @@ const total_items = ref(
 
 const label = ref(
   computed(() => {
-    if(props.modelValue == ''){
+    if (props.modelValue == '') {
       innerIndex.value = -1
       return 'NULL'
     }
@@ -70,8 +75,8 @@ const label = ref(
       return props.modelValue.length == 1 ? isLabel(props.modelValue[0]) : `${props.modelValue.length}개 선택됨`;
     }
 
-    if(props.options.value){
-      innerValue.value = total_items.value.find((item)=> item[props.options.value] == props.modelValue)
+    if (props.options.value) {
+      innerValue.value = total_items.value.find((item) => item[props.options.value] == props.modelValue)
     }
 
     return isLabel(innerValue.value);
@@ -81,7 +86,7 @@ const dropdown = ref(null);
 const open = reactive({ opened: false });
 const config = reactive({ id: randomString(7, false) });
 const innerValue = ref(null);
-const innerIndex = ref( -1)
+const innerIndex = ref(-1)
 
 
 onClickOutside(dropdown, (event) => (open.opened = false));
