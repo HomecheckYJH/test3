@@ -1,78 +1,78 @@
 <template>
-<div class="calendar common-side-margin common-border common-border-8">
-<div class="title">
+  <div class="calendar common-side-margin common-border common-border-8">
+    <div class="title">
 
-<div v-if="!type || type =='default'" class="default">
-    <a @click="prevMonth()">
-    <img class="icon-forward" />
-    </a>
-<span class="year">{{modelValue.getFullYear()}}</span>
-<span class="month">{{ addZero((modelValue.getMonth() + 1) )   }}</span>    
-<a @click="nextMonth()">
-<img class="icon-forward rotate-180" />
-</a>
-</div>
-<div v-if="type == 'range'" class="range">
-    {{`${modelValue.getFullYear()}.${addZero((modelValue.getMonth() + 1) )}.${addZero(modelValue.getDate())}`}} - 
-    {{`${destination_date.getFullYear()}.${addZero((destination_date.getMonth() + 1) )}.${addZero(destination_date.getDate())}`}}
-</div>
-</div>
-<!--contents -->
-<div class="contents common-contents-gap-20" style="margin-bottom:16px;">
-    <div class="day d-f">
-        <span 
-        :class="[item=='일' ? 'red' : '', item=='토' ? 'primary' : '', ]"
-        v-for="(item,i) in ['일','월','화','수','목','금','토']" :key="i" class="bold each">
-            {{item}}
+      <div v-if="!type || type == 'default'" class="default">
+        <a @click="prevMonth()">
+          <img class="icon-forward" />
+        </a>
+        <!-- <span class="year">{{ modelValue.getFullYear() }}</span> -->
+        <span v-if="modelValue" class="year">{{modelValue.getFullYear()}}</span>
+        <span class="month">{{ addZero((modelValue.getMonth() + 1)) }}</span>
+        <a @click="nextMonth()">
+          <img class="icon-forward rotate-180" />
+        </a>
+      </div>
+      <div v-if="type == 'range'" class="range">
+        {{ `${modelValue.getFullYear()}.${addZero((modelValue.getMonth() + 1))}.${addZero(modelValue.getDate())}` }} -
+        {{ `${destination_date.getFullYear()}.${addZero((destination_date.getMonth() + 1)
+        )}.${addZero(destination_date.getDate())}` }}
+      </div>
+    </div>
+    <!--contents -->
+    <div class="contents common-contents-gap-20" style="margin-bottom:16px;">
+      <div class="day d-f">
+        <span :class="[item == '일' ? 'red' : '', item == '토' ? 'primary' : '',]"
+          v-for="(item, i) in ['일', '월', '화', '수', '목', '금', '토']" :key="i" class="bold each">
+          {{ item }}
         </span>
+      </div>
+
+      <div v-for="(days, i) in computed_dates" :key="i" class="days d-f common-contents-gap-16">
+        <span :class="[i == 0 && day > 10 || i == (computed_dates.length - 1) && day < 10 ? 'gray' : '']"
+          v-for="(day, ii) in days" :key="ii" class="each">
+          {{ day }}
+        </span>
+      </div>
     </div>
 
-    <div v-for="(days,i) in computed_dates" :key="i" class="days d-f common-contents-gap-16">
-        <span 
-        :class="[ i == 0 && day > 10 || i == (computed_dates.length -1 ) && day < 10 ? 'gray' : '']"
-        v-for="(day,ii) in days" :key="ii" class="each">
-            {{day}}
-        </span>
-    </div>
-</div>
 
-
-</div>
+  </div>
 </template>
 <script>
 export default {
-props: ["modelValue", 'selection', 'type', 'period'],
+  props: ["modelValue", 'selection', 'type', 'period'],
   emits: ["update:modelValue"],
-  data(){
-      return{
-          destination : new Date()
-      }
+  data() {
+    return {
+      destination: new Date()
+    }
   },
-  methods:{
-      getFormatDate(year, month, day) {
+  methods: {
+    getFormatDate(year, month, day) {
       month = month >= 10 ? month : "0" + month;
       day = day >= 10 ? day : "0" + day;
       return year + "-" + month + "-" + day;
     },
-    addZero(i){
-        return i < 10 ? '0' + i : i
-        },
-    nextMonth(){
-        let result = new Date(this.modelValue.setMonth(this.modelValue.getMonth() + 1));
-       result.setDate(1);
-        this.$emit("update:modelValue", result);
+    addZero(i) {
+      return i < 10 ? '0' + i : i
     },
-       prevMonth(){
-        let result = new Date(this.modelValue.setMonth(this.modelValue.getMonth() - 1));
-       result.setDate(1);
-        this.$emit("update:modelValue", result);
+    nextMonth() {
+      let result = new Date(this.modelValue.setMonth(this.modelValue.getMonth() + 1));
+      result.setDate(1);
+      this.$emit("update:modelValue", result);
+    },
+    prevMonth() {
+      let result = new Date(this.modelValue.setMonth(this.modelValue.getMonth() - 1));
+      result.setDate(1);
+      this.$emit("update:modelValue", result);
     }
   },
   computed: {
-      destination_date(){
-         
-          return new Date(new Date(this.modelValue).setDate(this.modelValue.getDate() + (this.period ? this.period : 0)))
-      },
+    destination_date() {
+
+      return new Date(new Date(this.modelValue).setDate(this.modelValue.getDate() + (this.period ? this.period : 0)))
+    },
     computed_dates: function () {
       let year = this.modelValue.getFullYear();
       let month = this.modelValue.getMonth() + 1;
@@ -128,11 +128,11 @@ props: ["modelValue", 'selection', 'type', 'period'],
 }
 </script>
 <style scoped>
-.calendar{
-    padding: 20px 0;
+.calendar {
+  padding: 20px 0;
 }
 
-.range{
+.range {
   margin: 0 0 0 6px;
   font-size: 16px;
   font-weight: 500;
@@ -145,15 +145,15 @@ props: ["modelValue", 'selection', 'type', 'period'],
 }
 
 .contents .day,
-.contents .days{
-    flex-basis: 0;
+.contents .days {
+  flex-basis: 0;
 }
 
 
 
 .contents .day .each,
-.contents .days .each{
-    flex: 1 1 0;
+.contents .days .each {
+  flex: 1 1 0;
   font-size: 13.5px;
   font-weight: 500;
   font-stretch: normal;
@@ -165,20 +165,23 @@ props: ["modelValue", 'selection', 'type', 'period'],
 }
 
 .contents .day .each.bold,
-.contents .days .each.bold{
+.contents .days .each.bold {
   font-weight: bold;
 }
+
 .contents .day .each.gray,
-.contents .days .each.gray{
-   color: #b9b9b9;
+.contents .days .each.gray {
+  color: #b9b9b9;
 }
+
 .contents .day .each.red,
-.contents .days .each.red{
-   color: #e53c0e;
+.contents .days .each.red {
+  color: #e53c0e;
 }
+
 .contents .day .each.primary,
-.contents .days .each.primary{
-   color: #0064FF; 
+.contents .days .each.primary {
+  color: #0064FF;
 }
 
 
@@ -186,10 +189,11 @@ props: ["modelValue", 'selection', 'type', 'period'],
 
 
 
-.title{
-text-align: center;
+.title {
+  text-align: center;
 }
-.title .year{
+
+.title .year {
   margin: 0 6px 0 15px;
   font-size: 24px;
   font-weight: bold;
@@ -200,7 +204,8 @@ text-align: center;
   text-align: left;
   color: #b9b9b9;
 }
-.title .month{
+
+.title .month {
   margin: 0 15px 0 6px;
   font-size: 24px;
   font-weight: bold;
@@ -211,8 +216,4 @@ text-align: center;
   text-align: center;
   color: #2f2f2f;
 }
-
-
-
-
 </style>
