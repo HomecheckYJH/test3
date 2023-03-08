@@ -16,6 +16,8 @@
 </div>
 </template>
 <script>
+import { defineProps } from 'vue';
+
 const props = defineProps({
   getprops: Object | Array
 })
