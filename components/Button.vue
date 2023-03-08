@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
 <NuxtLink 
 class="button"  
 :class="[type ? type : '', size ? size : '', size=='md' ? 'common-border-8' : '' ]"
@@ -45,7 +45,53 @@ export default {
     }
 
 }
-</script>
+</script> -->
+<template>
+    <router-link
+      class="button"
+      :class="[type ? type : '', size ? size : '', size=='md' ? 'common-border-8' : '' ]"
+      @click="click_event(click)"
+      :to="to ? to : ''"
+      v-wave="waveeffect"
+    >
+      <span>
+        <slot />
+      </span>
+    </router-link>
+  </template>
+  <script>
+  export default {
+    props: ['type', 'to', 'size', 'click'],
+    computed: {
+      waveeffect() {
+        switch (this.type) {
+          case 'white':
+            return {
+              color: '#aaa'
+            };
+          case 'primary':
+          case 'primary-in':
+            return {
+              color: '#050507'
+            };
+          case 'link':
+            return {
+              color: '#a8c1ea'
+            };
+          default:
+            return {};
+        }
+      }
+    },
+    methods: {
+      click_event(fun) {
+        if (fun instanceof Function) {
+          fun();
+        }
+      }
+    }
+  };
+  </script> 
 <style scoped>
 .button{
     user-select: none;
