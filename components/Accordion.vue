@@ -64,7 +64,7 @@ export default {
     }
   },
   methods: {
-    openMethod(bool: boolean) {
+    openMethod(bool) {
       if (this.prevent) {
         return;
       }
