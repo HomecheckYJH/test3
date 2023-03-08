@@ -45,7 +45,8 @@
 </template>
 <script setup lang="ts">
 import { useDropZone } from '@vueuse/core'
-import ContextMenu from '@imengyu/vue3-context-menu'
+// import ContextMenu from '@imengyu/vue3-context-menu'
+import { showContextMenu } from '@imengyu/vue3-context-menu'
 
 
 const PdfjsLib = await import("pdfjs-dist");
@@ -198,23 +199,40 @@ function toExtension(type : String){
   }
 }
 
+// function Context(e : PointerEvent){
+//         e.preventDefault();
+//         //https://imengyu.top/pages/vue3-context-menu-docs/en/api/ContextMenuInstance.html
+//     ContextMenu.showContextMenu({
+//       x: e.x,
+//       y: e.y,
+//       customClass : 'ui-context',
+//       items: [
+//         { 
+//           label: `파일 목록 초기화`, 
+//           onClick: () => {
+//             filesData.value = [];
+//              emit('update:modelValue', filesData.value)
+//           }
+//         }
+//       ]
+//     });
+// }
 function Context(e : PointerEvent){
-        e.preventDefault();
-        //https://imengyu.top/pages/vue3-context-menu-docs/en/api/ContextMenuInstance.html
-    ContextMenu.showContextMenu({
-      x: e.x,
-      y: e.y,
-      customClass : 'ui-context',
-      items: [
-        { 
-          label: `파일 목록 초기화`, 
-          onClick: () => {
-            filesData.value = [];
-             emit('update:modelValue', filesData.value)
-          }
+  e.preventDefault();
+  showContextMenu({
+    x: e.x,
+    y: e.y,
+    customClass : 'ui-context',
+    items: [
+      { 
+        label: `파일 목록 초기화`, 
+        onClick: () => {
+          filesData.value = [];
+          emit('update:modelValue', filesData.value)
         }
-      ]
-    });
+      }
+    ]
+  });
 }
 
 function rotateFile(index : number, degree : number){
