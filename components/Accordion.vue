@@ -29,7 +29,7 @@
   </div>
 </template>
 <script>
-import TransitionExpand from '@/components/TransitionExpand.vue'
+import TransitionExpand from './TransitionExpand.vue'
 
 export default {
   // props: ["type", "opened", "options"],
