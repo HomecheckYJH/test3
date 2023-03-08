@@ -17,11 +17,11 @@
       <!--<img class="icon-down icon-animation" :class="[open ? 'rotate-180' : '']" />-->
     </div>
     <div>
-      <UITransitionExpand :type="option.openDuration ? option.openDuration : ''">
+      <TransitionExpand :type="option.openDuration ? option.openDuration : ''">
         <div v-if="open" class="inner">
           <slot name="inner" />
         </div>
-      </UITransitionExpand>
+      </TransitionExpand>
     </div>
     <div>
       <slot name="footer" />
@@ -29,8 +29,15 @@
   </div>
 </template>
 <script>
+import TransitionExpand from '@/components/TransitionExpand.vue'
+
 export default {
   // props: ["type", "opened", "options"],
+  name: 'App',
+  components: {
+    TransitionExpand
+  }
+
   props: {
     type: {
       type: String,
@@ -42,7 +49,7 @@ export default {
     },
     options: {
       type: Object,
-      default: () => {}
+      default: () => { }
     }
   },
   data() {

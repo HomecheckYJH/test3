@@ -47,4 +47,4 @@
 
 <script>
 import { Accordion } from 'yjhlib'
-</script>y
+</script>

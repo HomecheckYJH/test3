@@ -1,18 +1,13 @@
 <template>
-  <transition
-    name="expand"
-    @enter="enter"
-    @after-enter="afterEnter"
-    @leave="leave"
-    :class="[type ? type : '']"
-  >
+  <transition name="expand" @enter="enter" @after-enter="afterEnter" @leave="leave" :class="[type ? type : '']">
     <slot />
   </transition>
 </template>
+
 <script>
 export default {
   name: "TransitionExpand",
-  props : ['type'],
+  props: ['type'],
   methods: {
     enter(element) {
       const width = getComputedStyle(element).width;
@@ -68,6 +63,7 @@ export default {
   backface-visibility: hidden;
   perspective: 1000px;
 }
+
 .expand-enter-active {
   transition: all 0.22s ease;
   overflow: hidden;
@@ -79,6 +75,7 @@ export default {
   overflow: hidden;
   opacity: 0;
 }
+
 .late.expand-enter-active {
   transition: all 0.45s ease;
   overflow: hidden;
