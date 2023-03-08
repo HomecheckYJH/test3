@@ -8,7 +8,9 @@
         </a>
         <!-- <span class="year">{{ modelValue.getFullYear() }}</span> -->
         <span v-if="modelValue" class="year">{{modelValue.getFullYear()}}</span>
-        <span class="month">{{ addZero((modelValue.getMonth() + 1)) }}</span>
+        <!-- <span class="month">{{ addZero((modelValue.getMonth() + 1)) }}</span> -->
+        <span v-if="modelValue" class="month">{{ addZero((modelValue.getMonth() + 1)) }}</span>
+        
         <a @click="nextMonth()">
           <img class="icon-forward rotate-180" />
         </a>
