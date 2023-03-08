@@ -20,6 +20,7 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';//추가
 import { onClickOutside } from '@vueuse/core'
 
 const open = ref(false)
