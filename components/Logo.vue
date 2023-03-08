@@ -2,7 +2,7 @@
   <div class="d-f hck-logo-component">
     <img
       class="hck-logo"
-      src="~/assets/img/logo_lg.png"/>
+      src="./assets/img/logo_lg.png"/>
 
     <div class="logo-text">
       <h2 style="margin: 0">HOMECHECK</h2>
