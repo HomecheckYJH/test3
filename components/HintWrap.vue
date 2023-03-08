@@ -66,16 +66,24 @@ const Hint = ref(null)
 const PositionX = ref(null)
 
 const emit = defineEmits(['update:modelValue'])
-const uniqueClass = ref(useNuxtApp().$common.randomString(8, false))
-const resizeEvent = _.debounce(moveElement, 100)
+const uniqueClass = ref(Math.random().toString(36).substr(2, 8))
+///////////////////////////////////
+// const resizeEvent = _.debounce(moveElement, 100)
+let timerId;
+function debouncedMoveElement() {
+  clearTimeout(timerId);
+  timerId = setTimeout(moveElement, 100);
+}
+const resizeEvent = debouncedMoveElement;
+///////////////////////////////////
 
-window.addEventListener("resize", resizeEvent)
+window.addEventListener('resize', resizeEvent)
 onUnmounted(() => {
-  window.removeEventListener("resize", resizeEvent)
+  window.removeEventListener('resize', resizeEvent)
 })
 
-onClickOutside(Hint, (event) => {
-  emit("update:modelValue", false)
+onClickOutside(Hint, event => {
+  emit('update:modelValue', false)
 })
 
 function moveElement() {
