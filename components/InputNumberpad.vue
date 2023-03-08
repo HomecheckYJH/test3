@@ -30,7 +30,7 @@
     </div>
 </template>
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { onClickOutside } from '@vueuse/core'
 const props = defineProps({
     modelValue: Number,
