@@ -1,11 +1,13 @@
 <template>
     <div class="hint-area" :class="[uniqueClass]">
         <slot />
+
         <transition name="hint">
             <!-- :style="`transform : translateX( -${PositionX ? PositionX : null}px);`-->
             <div v-if="(props.modelValue)" ref="Hint"
                 :style="`min-width: ${props.minWidth}px; max-width: ${props.maxWidth}px; transform : translateX( -${PositionX ? PositionX : null}px);`"
                 class="hint-content">
+                
                 <slot name="content" />
 
             </div>
@@ -79,53 +81,58 @@ import { onClickOutside } from '@vueuse/core';
 import { ref, watch, onUnmounted } from 'vue';
 
 const props = defineProps({
-  modelValue: Boolean,
-  maxWidth: {
-    type: Number,
-    default: 400,
-  },
-  minWidth: {
-    type: Number,
-    default: 200,
-  },
+    // modelValue: Boolean,
+
+    modelValue: {
+        type: Boolean,
+        default: true
+    },
+    maxWidth: {
+        type: Number,
+        default: 400,
+    },
+    minWidth: {
+        type: Number,
+        default: 200,
+    },
 });
 
 const Hint = ref(null);
 const PositionX = ref(null);
 
 const emit = defineEmits(['update:modelValue']);
-const uniqueClass = ref(Math.random().toString(36).substring(7));
+const uniqueClass = ref(Math.random().toString(36).substring(7));//유일한 클래스명 생성
 // const resizeEvent = _.debounce(moveElement, 100);
 let timerId;
 function debouncedMoveElement() {
-  clearTimeout(timerId);
-  timerId = setTimeout(moveElement, 100);
+    clearTimeout(timerId);
+    timerId = setTimeout(moveElement, 100);
 }
 const resizeEvent = debouncedMoveElement;
 ///////////////////////////////////////////////////////////
 window.addEventListener('resize', resizeEvent);
 onUnmounted(() => {
-  window.removeEventListener('resize', resizeEvent);
+    window.removeEventListener('resize', resizeEvent);
 });
 
 onClickOutside(Hint, () => {
-  emit('update:modelValue', false);
+    emit('update:modelValue', false);
 });
 
 function moveElement() {
-  if (!Hint.value) {
-    return;
-  }
-  let element = Hint.value.getBoundingClientRect();
-  let width = element.width;
-  let x = element.x;
-  if (width + x + 20 > document.body.clientWidth) {
-    PositionX.value = `${width + x + 25 - document.body.clientWidth}`.split('.')[0];
-  }
+    if (!Hint.value) {
+        return;
+    }
+    let element = Hint.value.getBoundingClientRect();
+    let width = element.width;
+    let x = element.x;
+    if (width + x + 20 > document.body.clientWidth) {
+        PositionX.value = `${width + x + 25 - document.body.clientWidth}`.split('.')[0];
+    }
 }
 
 watch(Hint, (to, from) => {
-  moveElement();
+    moveElement();
 });
 
 </script>
@@ -205,4 +212,5 @@ watch(Hint, (to, from) => {
         transform: translateY(20px);
         opacity: 0;
     }
-}</style>
+}
+</style>
