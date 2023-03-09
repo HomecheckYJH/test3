@@ -16,6 +16,7 @@
         :class="open ? 'bx-rotate-180' : ''"></i>
       <!--<img class="icon-down icon-animation" :class="[open ? 'rotate-180' : '']" />-->
     </div>
+
     <div>
       <TransitionExpand :type="option.openDuration ? option.openDuration : ''">
         <div v-if="open" class="inner">
@@ -23,9 +24,11 @@
         </div>
       </TransitionExpand>
     </div>
+
     <div>
       <slot name="footer" />
     </div>
+    
   </div>
 </template>
 <script>

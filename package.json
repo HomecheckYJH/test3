@@ -12,7 +12,8 @@
     "lodash": "3.10.1",
     "marked": "^4.2.12",
     "pdfjs-dist": "^3.4.120",
-    "vue": "^3.2.47"
+    "vue": "^3.2.47",
+    "vue-wave": "^0.0.1"
   },
   "repository": {
     "type": "git",
