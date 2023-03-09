@@ -7,18 +7,37 @@
 import { marked } from 'marked';
 
 const props = defineProps({
-    string: String
+    string: { type: String, default: `# This is a H1` }
 })
 
 // function mark(str) {
 //     return marked(str)
 // }
 function mark(str) {
-    if (!str) {
-        return '';
-    }
-    return marked(str);
+    return marked(str)
 }
+
+
+// function marked(src, opt, callback) {
+//     // throw error in case of non string input
+//     if (typeof src === 'undefined' || src === null) {
+//         throw new Error('marked(): input parameter is undefined or null');
+//     }
+//     if (typeof src !== 'string') {
+//         throw new Error('marked(): input parameter is of type '
+//             + Object.prototype.toString.call(src) + ', string expected');
+//     }
+//라이브러리 내의 marked 함수를 가져와봤다.
+//props.string을 인자로 넣어서 실행해보면
+//marked 함수가 실행되는 것을 확인할 수 있다.
+//그런데 이렇게 실행하면 에러가 발생한다.
+//marked 함수는 인자로 src, opt, callback을 받는데
+//props.string만 넣어서 실행하니 에러가 발생한다.
+//그래서 marked 함수를 보니 src, opt, callback을 받는데
+//opt, callback은 기본값이 있어서 생략할 수 있지만
+//src는 생략할 수 없다.
+
+//v-html
 
 </script>
 <style>
@@ -309,4 +328,5 @@ function mark(str) {
 .markdown-viewer br {
     display: block;
     margin: 10px 0;
-}</style>
+}
+</style>
