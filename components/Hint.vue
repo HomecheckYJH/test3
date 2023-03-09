@@ -12,7 +12,7 @@
 <script setup lang="ts">
 const props = defineProps({
     html: { type: String, default: `<h1>내용</h1>` },
-    modelValue: {type: Boolean, default: true}
+    modelValue: {type: Boolean, default: false}
 })
 //임의의 default 값을 넣음
 
