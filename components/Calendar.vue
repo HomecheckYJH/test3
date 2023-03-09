@@ -1,4 +1,5 @@
 <!-- modelValue가 없어서 자꾸 결과물이 안나온다. -->
+<!-- modelvalue props를 입력해주자 -->
 <template>
   <div class="calendar common-side-margin common-border common-border-8">
     <div class="title">
@@ -8,9 +9,9 @@
           <img class="icon-forward" />
         </a>
         <!-- <span class="year">{{ modelValue.getFullYear() }}</span> -->
-        <span v-if="modelValue" class="year">{{ modelValue.getFullYear() }}</span>
+        <span class="year">{{ modelValue.getFullYear() }}</span>
         <!-- <span class="month">{{ addZero((modelValue.getMonth() + 1)) }}</span> -->
-        <span v-if="modelValue" class="month">{{ addZero((modelValue.getMonth() + 1)) }}</span>
+        <span class="month">{{ addZero((modelValue.getMonth() + 1)) }}</span>
 
         <a @click="nextMonth()">
           <img class="icon-forward rotate-180" />
@@ -44,7 +45,25 @@
 </template>
 <script>
 export default {
-  props: ["modelValue", 'selection', 'type', 'period'],
+  // props: ["modelValue", 'selection', 'type', 'period'],
+  props: {
+    modelValue: {
+      type: Date,
+      default: new Date()
+    },
+    selection: {
+      type: Boolean,
+      default: false
+    },
+    type: {
+      type: String,
+      default: ''
+    },
+    period: {
+      type: Number,
+      default: 0
+    }
+  },
   emits: ["update:modelValue"],
   data() {
     return {
