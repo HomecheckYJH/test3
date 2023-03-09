@@ -23,9 +23,9 @@
 
       <slot name="preview" />
 
-      <!-- <i style="font-size:24px; height: fit-content; margin-right:10px;" class='bx bx-chevron-down '
-        :class="open ? 'bx-rotate-180' : ''"></i> -->
-      <img class="icon-down icon-animation" :class="[open ? 'rotate-180' : '']" />
+      <i style="font-size:24px; height: fit-content; margin-right:10px;" class='bx bx-chevron-down '
+        :class="open ? 'bx-rotate-180' : ''"></i>
+      <!-- <img class="icon-down icon-animation" :class="[open ? 'rotate-180' : '']" /> -->
 
     </div>
 
