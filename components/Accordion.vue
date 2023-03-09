@@ -36,7 +36,6 @@ import TransitionExpand from './TransitionExpand.vue'
 
 export default {
   // props: ["type", "opened", "options"],
-  directives: { VueWave },
   name: 'App',
   components: {
     TransitionExpand
