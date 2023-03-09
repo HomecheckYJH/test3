@@ -43,7 +43,7 @@
 
   </div>
 </template>
-<script>
+<script lang="ts">
 import TransitionExpand from './TransitionExpand.vue'
 
 export default {
@@ -77,16 +77,16 @@ export default {
     this.open = this.opened ? this.opened : false;
   },
   computed: {
-    isOpened() {
+    isOpened(): boolean {
       this.open = this.opened ? this.opened : false;
       return this.open;
     },
-    option() {
+    option(): any {
       return this.options ? this.options : {}
     }
   },
   methods: {
-    openMethod(bool) {
+    openMethod(bool: boolean): void {
       if (this.prevent) {
         return;
       }

@@ -7,7 +7,7 @@
       <div v-if="!type || type == 'default'" class="default">
         <a @click="prevMonth()">
           <!-- <img class="icon-forward" /> -->
-          <span class="icon-forward">이전</span>
+          <span>이전</span>
         </a>
         <!-- <span class="year">{{ modelValue.getFullYear() }}</span> -->
         <span class="year">{{ modelValue.getFullYear() }}</span>
@@ -16,7 +16,7 @@
 
         <a @click="nextMonth()">
           <!-- <img class="icon-forward rotate-180" /> -->
-          <span class="icon-forward rotate-180">다음</span>
+          <span>다음</span>
         </a>
       </div>
       <div v-if="type == 'range'" class="range">

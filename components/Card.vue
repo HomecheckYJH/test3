@@ -4,11 +4,29 @@
     <slot />
   </div>
 </template>
-<script>
+<script lang="ts">
 export default {
-  props: ['type', 'disabled', 'size', 'options'],
+  // props: ['type', 'disabled', 'size', 'options'],
+  props: {
+    type: {
+      type: String,
+      default: ''
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    size: {
+      type: String,
+      default: ''
+    },
+    options: {
+      type: Object,
+      default: () => ({})
+    }
+  },
   computed: {
-    option() {
+    option(): any {
       return this.options ? this.options : {}
     }
   }
