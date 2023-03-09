@@ -1,6 +1,7 @@
 <template>
     <div class="hint-area" :class="[uniqueClass]">
         <slot />
+
         <transition name="hint">
             <!-- :style="`transform : translateX( -${PositionX ? PositionX : null}px);`-->
             <div v-if="(props.modelValue)" ref="Hint"
@@ -12,10 +13,15 @@
     </div>
 </template>
 <script setup>
+
 import { onClickOutside } from '@vueuse/core'
 import { ref, onUnmounted, watch } from 'vue'
 // import _ from 'lodash';
-import * as _ from 'lodash'
+// import * as _ from 'lodash'
+
+
+
+
 
 // const props = defineProps({ modelValue: Boolean })
 // const Hint = ref(null)
@@ -59,7 +65,7 @@ import * as _ from 'lodash'
 const props = defineProps({
     modelValue: {
         type: Boolean,
-        required: true
+        default: true
     }
 })
 const Hint = ref(null)
