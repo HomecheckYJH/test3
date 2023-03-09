@@ -28,14 +28,16 @@
     <div>
       <slot name="footer" />
     </div>
-    
+
   </div>
 </template>
 <script>
 import TransitionExpand from './TransitionExpand.vue'
+import VueWave from 'vue-wave'
 
 export default {
   // props: ["type", "opened", "options"],
+  directives: { VueWave },
   name: 'App',
   components: {
     TransitionExpand
