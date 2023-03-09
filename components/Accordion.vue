@@ -48,7 +48,7 @@ import TransitionExpand from './TransitionExpand.vue'
 
 export default {
   // props: ["type", "opened", "options"],
-  name: 'App',
+  name: 'Accordion',
   components: {
     TransitionExpand
   },

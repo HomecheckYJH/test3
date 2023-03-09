@@ -2,23 +2,27 @@
     <div class="list">
         <div class="list-items">
             <ListItem v-for="(item, i) in items" :key="i" :item="item" @onChanged="onChanged" />
+            <ListItem />
         </div>
     </div>
 </template>
 <script>
 // import _ from 'lodash'
 import * as _ from 'lodash'
+// import ListItem from './ListItem.vue'
 
-import ListItem from './ListItem.vue'
+export default {
+//     name: 'List',
+//     components: {
+//     ListItem
+// },
 
-export default{
-    props : ["items"],
-    setup(props){
-        function onChanged(received){
-            conso
-            .log(received)
+    props: ["items"],
+    setup(props) {
+        function onChanged(received) {
+            console.log(received)
         }
-        return {onChanged}
+        return { onChanged }
     },
 }
 

@@ -24,9 +24,7 @@
 <script>
 
 export default ({
-    // components: {
-    //     'list-item': ListItem
-    // },
+    name: "ListItem",
     props: ['item'],
     data() {
         return {
