@@ -7,7 +7,7 @@
 import { marked } from 'marked';
 
 const props = defineProps({
-    string: { type: String, default: `# This is a H1` }
+    string: { type: String, default: `# H1 마크다운 형식 입력` }
 })
 
 // function mark(str) {
@@ -16,6 +16,7 @@ const props = defineProps({
 function mark(str) {
     return marked(str)
 }
+//마크다운 코드를 넣으면 html 코드로 변환해주는 라이브러리!!!!!!!!!!!!!!!!!!!!!
 
 
 // function marked(src, opt, callback) {
@@ -37,7 +38,6 @@ function mark(str) {
 //opt, callback은 기본값이 있어서 생략할 수 있지만
 //src는 생략할 수 없다.
 
-//v-html
 
 </script>
 <style>

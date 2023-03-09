@@ -1,13 +1,6 @@
 <template>
   <div class="groupbtn common-border common-border-8" :class="[size ? size : '']">
-    <div
-      @click="To(i)"
-      class="btn"
-      :class="{ active: i == modelValue }"
-      v-for="(item, i) in items"
-      :key="i"
-      v-wave
-    >
+    <div @click="To(i)" class="btn" :class="{ active: i == modelValue }" v-for="(item, i) in items" :key="i" v-wave>
       <span class="text">
         {{ item }}
       </span>
@@ -16,7 +9,21 @@
 </template>
 <script>
 export default {
-  props: ["items", "modelValue","size"],
+  // props: ["items", "modelValue", "size"],
+  props: {
+    items: {
+      type: Array,
+      default: () => [],
+    },
+    modelValue: {
+      type: Number,
+      default: 0,
+    },
+    size: {
+      type: String,
+      default: "",
+    },
+  },
   emits: ["update:modelValue"],
   methods: {
     To(i) {
@@ -30,9 +37,9 @@ export default {
   display: flex;
   border: solid 1px #eaeaea;
   background-color: #fff;
-min-width:120px;
-width:inherit;
-height:100%;
+  min-width: 120px;
+  width: inherit;
+  height: 100%;
   font-size: 13.5px;
   font-weight: normal;
   font-stretch: normal;
@@ -49,7 +56,8 @@ height:100%;
   flex: 1;
   text-align: center;
 }
-.sm .btn{
+
+.sm .btn {
   padding: 6px 0;
   font-size: 12px;
 }
@@ -57,6 +65,7 @@ height:100%;
 .btn .text {
   width: 100%;
 }
+
 .btn.active {
   background: var(--primary-gradient);
 }
@@ -71,9 +80,11 @@ height:100%;
 .btn:first-child {
   border-radius: 8px 0 0 8px;
 }
+
 .btn:last-child {
   border-radius: 0 8px 8px 0;
 }
+
 .btn:nth-last-child(n-1) {
   height: 100%;
   width: 1px;

@@ -22,13 +22,11 @@
                     style="grid-column-start : 1; grid-column-end : 4;">
                     모두 지우기
                 </div>
-
-
-
             </div>
         </transition>
     </div>
 </template>
+
 <script setup>
 import { ref, watch } from 'vue'
 import { onClickOutside } from '@vueuse/core'

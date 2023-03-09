@@ -1,5 +1,6 @@
 <template>
-  <div class="UIFrame common-border-8" :class="[type ? type : '', option.nopadding == true ? 'no-padding' : '']">
+  <div class="UIFrame common-border-8"
+  :class="[type ? type : '', option.nopadding == true ? 'no-padding' : '']">
     <slot />
   </div>
 </template>
