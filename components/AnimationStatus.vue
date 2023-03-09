@@ -22,7 +22,7 @@ export default {
     }
 }
 </script> -->
-
+<!-- 
 <script lang="ts">
 import { defineComponent } from 'vue'
 
@@ -45,8 +45,22 @@ export default defineComponent({
     }
   }
 })
-</script>
+</script> -->
 
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  props: {
+    status: String
+  },
+  computed: {
+    mark(): string {
+      return 'M14.1 27.2l7.1 7.2 16.7-16.8';
+    }
+  }
+})
+</script>
 
 
 <style scoped>
