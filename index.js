@@ -1,8 +1,11 @@
 import './css/globalcss.css';
 import './components/assets/img/logo_lg.png'
 import { createApp } from 'vue';
+import VWave from 'v-wave'
 
 const app = createApp({})
+
+
 app.use(VWave)
 
 import { default as Accordion } from './components/Accordion.vue';
