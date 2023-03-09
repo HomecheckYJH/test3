@@ -56,7 +56,8 @@ export default defineComponent({
   },
   computed: {
     mark(): string {
-      return 'M14.1 27.2l7.1 7.2 16.7-16.8';
+    //   return 'M14.1 27.2l7.1 7.2 16.7-16.8';
+    return 'M16 16 36 36 M36 16 16 36'
     }
   }
 })
