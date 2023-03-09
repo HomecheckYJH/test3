@@ -6,7 +6,8 @@
 
       <div v-if="!type || type == 'default'" class="default">
         <a @click="prevMonth()">
-          <img class="icon-forward" />
+          <!-- <img class="icon-forward" /> -->
+          <span class="icon-forward">이전</span>
         </a>
         <!-- <span class="year">{{ modelValue.getFullYear() }}</span> -->
         <span class="year">{{ modelValue.getFullYear() }}</span>
@@ -14,7 +15,8 @@
         <span class="month">{{ addZero((modelValue.getMonth() + 1)) }}</span>
 
         <a @click="nextMonth()">
-          <img class="icon-forward rotate-180" />
+          <!-- <img class="icon-forward rotate-180" /> -->
+          <span class="icon-forward rotate-180">다음</span>
         </a>
       </div>
       <div v-if="type == 'range'" class="range">
@@ -43,13 +45,13 @@
 
   </div>
 </template>
-<script>
+<script lang="ts">
 export default {
   // props: ["modelValue", 'selection', 'type', 'period'],
   props: {
     modelValue: {
       type: Date,
-      default: new Date()
+      default: new Date()//기본값을 줘서 작동하게 함.
     },
     selection: {
       type: Boolean,
@@ -71,27 +73,29 @@ export default {
     }
   },
   methods: {
-    getFormatDate(year, month, day) {
+    getFormatDate(year:any, month:any, day:any):string {
       month = month >= 10 ? month : "0" + month;
       day = day >= 10 ? day : "0" + day;
       return year + "-" + month + "-" + day;
     },
-    addZero(i) {
+    addZero(i: number): any {
       return i < 10 ? '0' + i : i
-    },
-    nextMonth() {
+    },  
+    nextMonth():void {
       let result = new Date(this.modelValue.setMonth(this.modelValue.getMonth() + 1));
       result.setDate(1);
-      this.$emit("update:modelValue", result);
+      // this.$emit("update:modelValue", result);
+      this.modelValue = result;
     },
-    prevMonth() {
+    prevMonth():void {
       let result = new Date(this.modelValue.setMonth(this.modelValue.getMonth() - 1));
       result.setDate(1);
-      this.$emit("update:modelValue", result);
+      // this.$emit("update:modelValue", result);
+      this.modelValue = result;
     }
   },
   computed: {
-    destination_date() {
+    destination_date(): Date {
 
       return new Date(new Date(this.modelValue).setDate(this.modelValue.getDate() + (this.period ? this.period : 0)))
     },
@@ -119,9 +123,9 @@ export default {
       let prevMonthLastDate = prevLastDate;
 
       let day = 1;
-      let prevDay = prevMonthLastDate - monthFirstDay + 1;
-      let local_dates = [];
-      let weekOfDays = [];
+      let prevDay:any = prevMonthLastDate - monthFirstDay + 1;
+      let local_dates:Array<Array<number>> = [];
+      let weekOfDays: Array<number> = [];
       while (day <= monthLastDate) {
         if (day === 1) {
           // 1일이 어느 요일인지에 따라 테이블에 그리기 위한 지난 셀의 날짜들을 구할 필요가 있다.

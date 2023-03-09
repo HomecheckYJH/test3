@@ -1,59 +1,57 @@
 <template>
-<div 
-class="card common-border common-border-8"
-:class="[{disabled : disabled == true }, type ? type : '', size ? size : '', option.noMargin ? 'no-margin':'']"
-
->
-        <slot/>
-    </div>
+  <div class="card common-border common-border-8"
+    :class="[{ disabled: disabled == true }, type ? type : '', size ? size : '', option.noMargin ? 'no-margin' : '']">
+    <slot />
+  </div>
 </template>
 <script>
 export default {
-    props:['type', 'disabled','size', 'options'],
-    computed:{
-      option(){
-        return this.options ? this.options : {}
-      }
+  props: ['type', 'disabled', 'size', 'options'],
+  computed: {
+    option() {
+      return this.options ? this.options : {}
     }
+  }
 }
 </script>
 
 
 <style scoped>
-.card{
-    display: block;
+.card {
+  display: block;
   margin: 10px 20px;
   padding: 16px 20px;
   text-decoration: none;
   background: #fff;
 }
-.card.no-margin{
+
+.card.no-margin {
   margin: 0;
 }
 
-.card.slim{
+.card.slim {
   padding: 12px;
 }
 
-.card.none{
+.card.none {
   padding: 0;
   margin: 0;
-  border : none;
+  border: none;
 }
 
-.card.disabled{
+.card.disabled {
   cursor: not-allowed;
   background: #fcfcfc;
 }
 
-.common-border.notice{
-    background: #f4f7f8;
-    border: solid 1px #eee;
+.common-border.notice {
+  background: #f4f7f8;
+  border: solid 1px #eee;
 }
 
 
-.card-title{
-    align-self: center;
+.card-title {
+  align-self: center;
   font-family: NotoSansKR;
   font-size: 13.5px;
   font-weight: normal;
@@ -66,8 +64,8 @@ export default {
 }
 
 
-.icon-more{
+.icon-more {
   object-fit: contain;
-     content:url("./assets/img/icn_more.svg");
+  content: url("./assets/img/icn_more.svg");
 }
 </style>
