@@ -10,7 +10,7 @@
 </template>
 <script setup lang="ts">
 const props = defineProps({
-    html: { type: String, default: `<h1>내용</h1>` },
+    html: { type: String, default: `<p>힌트입니다</p>` },
     modelValue: {type: Boolean, default: true}
 })
 //임의의 default 값을 넣음

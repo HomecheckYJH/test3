@@ -68,14 +68,14 @@ const PositionX = ref(null)
 const emit = defineEmits(['update:modelValue'])
 const uniqueClass = ref(Math.random().toString(36).substr(2, 8))
 ///////////////////////////////////
-// const resizeEvent = _.debounce(moveElement, 100)
-let timerId;
-function debouncedMoveElement() {
-    clearTimeout(timerId);
-    timerId = setTimeout(moveElement, 100);
-}
+const resizeEvent = _.debounce(moveElement, 100)
+// let timerId;
+// function debouncedMoveElement() {
+//     clearTimeout(timerId);
+//     timerId = setTimeout(moveElement, 100);
+// }
 
-const resizeEvent = debouncedMoveElement;
+// const resizeEvent = debouncedMoveElement;
 ///////////////////////////////////
 
 window.addEventListener('resize', resizeEvent)
