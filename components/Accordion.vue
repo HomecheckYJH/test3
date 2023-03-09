@@ -33,7 +33,6 @@
 </template>
 <script>
 import TransitionExpand from './TransitionExpand.vue'
-import VueWave from 'vue-wave'
 
 export default {
   // props: ["type", "opened", "options"],
