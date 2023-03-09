@@ -1,7 +1,9 @@
 <template>
-  <div class="card common-border common-border-8"
-    :class="[{ disabled: disabled == true }, type ? type : '', size ? size : '', option.noMargin ? 'no-margin' : '']">
+  <div class="card common-border common-border-8 disabled "
+   >
     <slot />
+    <!-- <div class="card common-border common-border-8" -->
+    <!-- :class="[{ disabled: disabled == true }, type ? type : '', size ? size : '', option.noMargin ? 'no-margin' : '']" -->
   </div>
 </template>
 <script lang="ts">
