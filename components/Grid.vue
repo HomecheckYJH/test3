@@ -30,11 +30,12 @@ function keyToArray(array){
 
 
 function imgThumnail(item){
-    let inputs = keyToArray(item.inputs)
-    switch(inputs[0].type){
-        case 'standard':
-        return `https://homecheck.kr/cdn/?f=${inputs[0].far}`;
-    }
+    // let inputs = keyToArray(item.inputs)
+    // switch(inputs[0].type){
+    //     case 'standard':
+    //     return `https://homecheck.kr/cdn/?f=${inputs[0].far}`;
+    // }
+    return `https://homecheck.kr/img/common/intro_logo.png`;
 }
 function ThumnailDescription(item){
     let inputs = keyToArray(item.inputs)
