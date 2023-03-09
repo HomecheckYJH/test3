@@ -46,17 +46,38 @@ export default {
 
 }
 </script> -->
+
+
+<!-- @click="click_event(click)" -->
 <template>
-  <router-link class="button" :class="[type ? type : '', size ? size : '', size == 'md' ? 'common-border-8' : '']"
-    @click="click_event(click)" :to="to ? to : ''" v-wave="waveeffect">
+  <div class="button" :class="[type ? type : '', size ? size : '', size == 'md' ? 'common-border-8' : '']"
+    @click="click_event()" :to="to ? to : ''" v-wave="waveeffect">
     <span>
       <slot />
     </span>
-  </router-link>
+  </div>
 </template>
 <script>
 export default {
-  props: ['type', 'to', 'size', 'click'],
+  // props: ['type', 'to', 'size', 'click'],
+  props: {
+    type: {
+      type: String,
+      default: ''
+    },
+    to: {
+      type: String,
+      default: ''
+    },
+    size: {
+      type: String,
+      default: ''
+    },
+    },
+    click: {
+      type: Function,
+      default: null
+    },
   computed: {
     waveeffect() {
       switch (this.type) {
@@ -78,11 +99,16 @@ export default {
       }
     }
   },
+  // methods: {
+  //   click_event(fun) {
+  //     if (fun instanceof Function) {
+  //       fun();
+  //     }//fun이 function이면 fun()실행
+  //   }
+  // }
   methods: {
-    click_event(fun) {
-      if (fun instanceof Function) {
-        fun();
-      }
+    click_event() {
+      alert('클릭 발생')
     }
   }
 };
