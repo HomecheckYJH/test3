@@ -48,12 +48,20 @@ export default {
 </script> -->
 
 
-<!-- @click="click_event(click)" -->
+<!-- 
+<div class="button" :class="[type ? type : '', size ? size : '', size == 'md' ? 'common-border-8' : '']"
+@click="click_event(click)" :to="to ? to : ''" v-wave="waveeffect">
+<span>
+  <slot />
+</span>
+</div> -->
+
+
 <template>
   <div class="button" :class="[type ? type : '', size ? size : '', size == 'md' ? 'common-border-8' : '']"
-    @click="click_event()" :to="to ? to : ''" v-wave="waveeffect">
+    @click="click_event()" v-wave="waveeffect">
     <span>
-      <slot />
+      <slot />버튼
     </span>
   </div>
 </template>
