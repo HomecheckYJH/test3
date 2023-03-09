@@ -1,12 +1,14 @@
+  <!-- v-wave="
+    option.onlyPreviewOpen ? false :
+      {
+        color: type == 'primary' ? '#050507' : '#aaa',
+      }" -->
+
 <template>
   <div class="accordion common-border common-border-8"
   @click="openMethod(false)"
   :class="[type ? type : '']"
-  v-wave="
-    option.onlyPreviewOpen ? false :
-      {
-        color: type == 'primary' ? '#050507' : '#aaa',
-      }">
+      >
     <slot name="header" />
 
     <div style="cursor:pointer;" 
