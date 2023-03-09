@@ -1,13 +1,18 @@
 <template>
   <div class="groupbtn common-border common-border-8" :class="[size ? size : '']">
-    <div @click="To(i)" class="btn" :class="{ active: i == modelValue }" v-for="(item, i) in items" :key="i" v-wave>
+    <div @click="To(i)" 
+    class="btn" 
+    :class="{ active: i == modelValue }" 
+    v-for="(item, i) in items" 
+    :key="i" v-wave>
       <span class="text">
         {{ item }}
       </span>
     </div>
   </div>
 </template>
-<script>
+<script lang="ts">
+
 export default {
   // props: ["items", "modelValue", "size"],
   props: {

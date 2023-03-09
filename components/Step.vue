@@ -7,29 +7,36 @@
                 <transition :name="stepTransition" duration="350">
                     <div class="step-component" v-if="props.index == 0">
                         <slot name="0" />
+                        <div>0</div>
                     </div>
                     <div class="step-component" v-else-if="props.index == 1">
                         <slot name="1" />
+                        <div>1</div>
                     </div>
 
                     <div class="step-component" v-else-if="props.index == 2">
                         <slot name="2" />
+                        <div>2</div>
                     </div>
 
                     <div class="step-component" v-else-if="props.index == 3">
                         <slot name="3" />
+                        <div>3</div>
                     </div>
 
                     <div class="step-component" v-else-if="props.index == 4">
                         <slot name="4" />
+                        <div>4</div>
                     </div>
 
                     <div class="step-component" v-else-if="props.index == 5">
                         <slot name="5" />
+                        <div>5</div>
                     </div>
 
                     <div class="step-component" v-else-if="props.index == 6">
                         <slot name="6" />
+                        <div>6</div>
                     </div>
 
 
@@ -41,11 +48,15 @@
         <slot name="footer" />
     </div>
 </template>
+
 <script setup>
 import { ref, watch } from 'vue'
 
 const props = defineProps({
-    index: Number
+    index: {
+        type: Number,
+        default: 0
+    }
 })
 
 const stepTransition = ref('step-to')
