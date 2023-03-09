@@ -15,7 +15,8 @@ export default{
     props : ["items"],
     setup(props){
         function onChanged(received){
-            console.log(received)
+            conso
+            .log(received)
         }
         return {onChanged}
     },

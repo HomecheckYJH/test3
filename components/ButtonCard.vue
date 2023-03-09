@@ -10,19 +10,33 @@
   </NuxtLink>
 </template> -->
 <template>
-  <router-link :to="to ? to : ''" @click="click_event(click)" class="card-btn common-border common-border-8"
-    :class="{ disabled: disabled == true }" v-wave="disabled ? false : { color: '#aaa' }">
+  <div :to="to ? to : ''" 
+  @click="click_event(click)" 
+  class="card-btn common-border common-border-8"
+    :class="{ disabled: disabled == true }" 
+    v-wave="disabled ? false : { color: '#aaa' }">
+
+
     <div :class="{ 'common-space-between': type == 'inline' }">
       <slot />
       <span class="card-title">{{ title }}</span>
       <img v-if="type == 'inline'" class="icon-more">
     </div>
-  </router-link>
+
+  </div>
 </template>
 
 <script>
 export default {
-  props: ['type', 'to', 'title', 'disabled', 'click', 'dev'],
+  // props: ['type', 'to', 'title', 'disabled', 'click', 'dev'],
+  props: {
+    type: String,
+    to: String,
+    title: String,
+    disabled: Boolean,
+    click: Function,
+    dev: Boolean,
+  },
 
   methods: {
     async click_event(fun) {

@@ -29,7 +29,21 @@ import { onClickOutside } from '@vueuse/core'
 
 
 export default {
-  props: ["items", "modelValue", "align"],
+  // props: ["items", "modelValue", "align"],
+  props: {
+    items: {
+      type: Array,
+      default: () => []
+    },
+    modelValue: {
+      type: String,
+      default: ''
+    },
+    align: {
+      type: String,
+      default: 'left'
+    }
+  },
   emits: ["update:modelValue"],
 
   mounted() {
