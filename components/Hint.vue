@@ -1,12 +1,12 @@
 <template>
     <div class="hint-area">
         <transition name="hint">
-            <div class="hint-content" v-html="props.html">
+            <div v-if="(props.modelValue && props.html)" class="hint-content" v-html="props.html">
                 <!-- <div v-if="(props.modelValue && props.html)" class="hint-content" v-html="props.html"></div> -->
             </div>
         </transition>
     </div>
-    <i style="margin-left:10px;" class='bx bx-question-mark bx-border-circle'></i>
+    <i v-if="props.html" style="margin-left:10px;" class='bx bx-question-mark bx-border-circle'></i>
     <!-- <i v-if="props.html" style="margin-left:10px;" class='bx bx-question-mark bx-border-circle'></i> -->
 </template>
 <script setup lang="ts">
