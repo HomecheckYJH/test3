@@ -1,20 +1,29 @@
 <template>
-  <div class="accordion common-border common-border-8" @click="openMethod(false)" :class="[type ? type : '']" v-wave="
+  <div class="accordion common-border common-border-8"
+  @click="openMethod(false)"
+  :class="[type ? type : '']"
+  v-wave="
     option.onlyPreviewOpen ? false :
       {
         color: type == 'primary' ? '#050507' : '#aaa',
       }">
     <slot name="header" />
 
-    <div style="cursor:pointer;" class="contents common-border-8" @click="openMethod(true)" v-wave="
+    <div style="cursor:pointer;" 
+    class="contents common-border-8" 
+    @click="openMethod(true)" 
+    v-wave="
       !option.onlyPreviewOpen ? false :
         {
           color: type == 'primary' ? '#050507' : '#aaa',
         }">
+
       <slot name="preview" />
+
       <i style="font-size:24px; height: fit-content; margin-right:10px;" class='bx bx-chevron-down '
         :class="open ? 'bx-rotate-180' : ''"></i>
       <!--<img class="icon-down icon-animation" :class="[open ? 'rotate-180' : '']" />-->
+
     </div>
 
     <div>
@@ -52,7 +61,7 @@ export default {
     },
     options: {
       type: Object,
-      default: () => { }
+      default: () => ({})
     }
   },
   data() {
