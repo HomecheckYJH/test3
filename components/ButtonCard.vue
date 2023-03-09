@@ -10,11 +10,8 @@
   </NuxtLink>
 </template> -->
 <template>
-  <div :to="to ? to : ''" 
-  @click="click_event(click)" 
-  class="card-btn common-border common-border-8"
-    :class="{ disabled: disabled == true }" 
-    v-wave="disabled ? false : { color: '#aaa' }">
+  <div :to="to ? to : ''" @click="click_event(click)" class="card-btn common-border common-border-8"
+    :class="{ disabled: disabled == true }" v-wave="disabled ? false : { color: '#aaa' }">
 
 
     <div :class="{ 'common-space-between': type == 'inline' }">
@@ -27,7 +24,13 @@
 </template>
 
 <script>
+import VWave from 'v-wave'
+
 export default {
+  directives: {
+    wave: VWave,
+  },
+
   // props: ['type', 'to', 'title', 'disabled', 'click', 'dev'],
   props: {
     type: String,
