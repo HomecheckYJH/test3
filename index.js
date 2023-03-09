@@ -1,6 +1,9 @@
 import './css/globalcss.css';
 import './components/assets/img/logo_lg.png'
 import { createApp } from 'vue';
+import VueWave from 'vue-wave'
+
+Vue.use(VueWave)
 
 const app = createApp({})
 
