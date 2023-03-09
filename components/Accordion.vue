@@ -1,13 +1,14 @@
-  <!-- v-wave="
-    option.onlyPreviewOpen ? false :
-      {
-        color: type == 'primary' ? '#050507' : '#aaa',
-      }" -->
+
 
 <template>
   <div class="accordion common-border common-border-8"
   @click="openMethod(false)"
   :class="[type ? type : '']"
+  v-wave="
+    option.onlyPreviewOpen ? false :
+      {
+        color: type == 'primary' ? '#050507' : '#aaa',
+      }"
       >
     <slot name="header" />
 
@@ -22,9 +23,9 @@
 
       <slot name="preview" />
 
-      <i style="font-size:24px; height: fit-content; margin-right:10px;" class='bx bx-chevron-down '
-        :class="open ? 'bx-rotate-180' : ''"></i>
-      <!--<img class="icon-down icon-animation" :class="[open ? 'rotate-180' : '']" />-->
+      <!-- <i style="font-size:24px; height: fit-content; margin-right:10px;" class='bx bx-chevron-down '
+        :class="open ? 'bx-rotate-180' : ''"></i> -->
+      <img class="icon-down icon-animation" :class="[open ? 'rotate-180' : '']" />
 
     </div>
 
