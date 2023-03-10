@@ -15,7 +15,8 @@
     "pdfjs-dist": "^3.4.120",
     "v-wave": "^1.5.0",
     "vue": "^3.2.47",
-    "vue-wave": "^0.0.1"
+    "vue-wave": "^0.0.1",
+    "vuetify": "^3.1.8"
   },
   "repository": {
     "type": "git",

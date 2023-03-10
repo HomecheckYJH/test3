@@ -3,9 +3,11 @@ import './components/assets/img/logo_lg.png'
 import { createApp } from 'vue';
 import VWave from 'v-wave'
 import 'boxicons';
+import vuetify from './plugins/vuetify'
+
 
 const app = createApp({})
-
+app.use(vuetify)
 
 // app.use(VWave)
 // app.use(VWave, {})

@@ -30,13 +30,13 @@
 
     </div>
 
-    <!-- <div>
+    <div>
       <TransitionExpand :type="option.openDuration ? option.openDuration : ''">
         <div v-if="open" class="inner">
           <slot name="inner" />
         </div>
       </TransitionExpand>
-    </div> -->
+    </div>
 
     <div>
       <slot name="thumnail_footer" />
