@@ -4,7 +4,7 @@
   </transition>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: "TransitionExpand",
   // props: ['type'],
@@ -19,7 +19,7 @@ export default {
   }
 },
   methods: {
-    enter(element) {
+    enter(element: any): void {
       const width = getComputedStyle(element).width;
 
       element.style.width = width;
@@ -47,10 +47,10 @@ export default {
         element.style.height = height;
       });
     },
-    afterEnter(element) {
+    afterEnter(element: any): void {
       element.style.height = "auto";
     },
-    leave(element) {
+    leave(element: any): void {
       const height = getComputedStyle(element).height;
 
       element.style.height = height;

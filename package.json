@@ -9,6 +9,7 @@
   "dependencies": {
     "@imengyu/vue3-context-menu": "^1.2.3",
     "@vueuse/core": "^9.13.0",
+    "boxicons": "^2.1.4",
     "lodash": "3.10.1",
     "marked": "^4.2.12",
     "pdfjs-dist": "^3.4.120",

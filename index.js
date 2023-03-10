@@ -2,6 +2,7 @@ import './css/globalcss.css';
 import './components/assets/img/logo_lg.png'
 import { createApp } from 'vue';
 import VWave from 'v-wave'
+import 'boxicons';
 
 const app = createApp({})
 
