@@ -1,8 +1,8 @@
 <template>
   <div class="d-f hck-logo-component">
     <img
-      class="hck-logo" src="https://homecheck.kr/img/common/intro_logo.png">
-      <!-- src="./assets/img/logo_lg.png"/ -->
+      class="hck-logo" src="./assets/img/logo_lg.png">
+      
     <div class="logo-text">
       <h2 style="margin: 0">HOMECHECK</h2>
       <b>Cloud Platform</b>
