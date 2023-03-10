@@ -29,7 +29,18 @@ export default ({
     components: {
         ButtonIcon
   },
-    props: ['item'],
+    // props: ['item'],
+    props: {
+        item: {
+            type: Object,
+            default: {
+                label: "Label",
+                description: "Description",
+                imgs: [],
+                actions: []
+            }
+        }
+    },
     data() {
         return {
             img_active: false
