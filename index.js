@@ -7,7 +7,8 @@ const app = createApp({})
 
 
 // app.use(VWave)
-app.use(VWave, {})
+// app.use(VWave, {})
+app.directive('wave', VWave);
 
 import { default as Accordion } from './components/Accordion.vue';
 import { default as AnimationSpinner } from './components/AnimationSpinner.vue';
