@@ -8,7 +8,7 @@ import { defineComponent } from 'vue';
 export default defineComponent({
     props: {
         align: { type: String, default: '' },
-        icon: {type: String, default: 'edit'}
+        icon: { type: String, default: 'edit' }
         // icon 값으로는 close, edit, delete 중 하나를 넣어야 함
     },
     setup(props) {

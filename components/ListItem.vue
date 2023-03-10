@@ -21,7 +21,7 @@
         </div>
     </div>
 </template>
-<script>
+<script lang="ts">
 import ButtonIcon from './ButtonIcon.vue'
 
 export default ({
@@ -37,7 +37,7 @@ export default ({
                 label: "Label",
                 description: "Description",
                 imgs: ['img1','img2'],
-                actions: [1,2,3,4,5,6]
+                actions: [1]
             }
         }
     },
@@ -47,11 +47,11 @@ export default ({
         }
     },
     computed: {
-        computedImgs() {
+        computedImgs():any {
             try {
                 return this.item.imgs.length > 1 ? [this.item.imgs[0], this.item.imgs[1]] : this.item.imgs
             }
-            catch (ex) {
+            catch (ex: any) {
                 return []
             }
         }
