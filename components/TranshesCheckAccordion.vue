@@ -1,6 +1,9 @@
 <template>
-    <Accordion style=" width: calc(85% - 60px );
-                    margin: 0px 6px 0px 6px;" type="primary" v-for="(item, i) in [1, 2, 3, 4]" :key="i" :opened="true">
+    <Accordion style="width: calc(85% - 60px );
+                    margin: 0px 6px 0px 6px;" 
+                    type="primary" 
+                    v-for="(item, i) in [1, 2, 3, 4]" :key="i" 
+                    :opened="false">
 
         <template #preview>
             <span class="accordion-date">2021.12.2</span>
