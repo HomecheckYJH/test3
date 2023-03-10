@@ -12,7 +12,7 @@ export default {
         }
     },
     methods: {
-        addZero(i) {
+        addZero(i: number): any {
             return i < 10 ? '0' + i : i
         },
     }

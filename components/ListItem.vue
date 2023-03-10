@@ -8,13 +8,13 @@
             <!--<span>Caption Caption Capti</span>-->
         </div>
 
-
+<!-- 
         <div class="list-item-description center">
             {{ item.label }}
             <span>
                 {{ item.description }}
             </span>
-        </div>
+        </div> -->
         <div class="list-item-icons d-f center">
             <UIButtonIcon v-for="(action, action_id) in item.actions" :key="action_id" align="center" :icon="action.icon"
                 @click="action.command" />
