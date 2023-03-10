@@ -30,18 +30,18 @@ export default {
     },
   emits: ["update:modelValue"],
   methods:{
-    //   change(){
-    //       if(this.modelValue)
-    //       {
-    //   this.$emit("update:modelValue", false);
-    //       }
-    //       else{
-    //           this.$emit("update:modelValue", true);
-    //       }
-    //   }
-    change() {
-      this.modelValue = !this.modelValue;
-    }
+      change(){
+          if(this.modelValue)
+          {
+      this.$emit("update:modelValue", false);
+          }
+          else{
+              this.$emit("update:modelValue", true);
+          }
+      }
+    // change() {
+    //   this.modelValue = !this.modelValue;
+    // }
   }
 }
 </script>
