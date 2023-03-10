@@ -87,20 +87,18 @@ export default {
       // // this.$emit("update:modelValue", result);
       // this.modelValue = result;
 
-      const newDate = new Date(this.modelValue)
-  newDate.setMonth(newDate.getMonth() + 1)
-  newDate.setDate(1)
-  this.modelValue = newDate
+      let result = new Date(this.modelValue.setMonth(this.modelValue.getMonth() + 1));
+  result.setDate(1);
+  this.$emit("update:modelValue", result);
     },
     prevMonth(): void {
       // let result = new Date(this.modelValue.setMonth(this.modelValue.getMonth() - 1));
       // result.setDate(1);
       // // this.$emit("update:modelValue", result);
       // this.modelValue = result;
-      const newDate = new Date(this.modelValue)
-  newDate.setMonth(newDate.getMonth() - 1)
-  newDate.setDate(1)
-  this.modelValue = newDate
+      let result = new Date(this.modelValue.setMonth(this.modelValue.getMonth() - 1));
+  result.setDate(1);
+  this.$emit("update:modelValue", result);
     }
   },
   computed: {
