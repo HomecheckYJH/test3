@@ -15,7 +15,7 @@ export default {
     },
     mode: {
       type: Array,
-      default: []
+      default: [1,2,3]
     },
     default: {
       type: Object,
