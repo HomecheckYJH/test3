@@ -46,5 +46,12 @@
 </template>
 
 <script>
-import { Accordion } from 'yjhlib'
+import Accordion from './Accordion.vue'
+
+export default {
+  name: 'TranshesCheckAccordion',
+  components: {
+    Accordion
+  }
+}
 </script>
