@@ -3,7 +3,7 @@ import './components/assets/img/logo_lg.png'
 import { createApp } from 'vue';
 import VWave from 'v-wave'
 import 'boxicons';
-import Vuetify from 'vuetify'
+import { Vuetify } from 'vuetify'
 import 'vuetify/dist/vuetify.css'
 
 
