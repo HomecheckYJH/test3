@@ -14,6 +14,7 @@
 
     <div style="cursor:pointer;" 
     class="contents common-border-8" 
+
     @click="openMethod(true)" 
     v-wave="
       !option.onlyPreviewOpen ? false :
@@ -38,7 +39,7 @@
     </div>
 
     <div>
-      <slot name="footer" />
+      <slot name="thumnail_footer" />
     </div>
 
   </div>
