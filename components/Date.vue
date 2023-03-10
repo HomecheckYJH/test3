@@ -1,13 +1,19 @@
 <template>
- <span> {{`${modelValue.getFullYear()}.${addZero((modelValue.getMonth() + 1) )}.${addZero(modelValue.getDate())}`}}</span>
+    <span> {{ `${modelValue.getFullYear()}.${addZero((modelValue.getMonth() + 1)
+    )}.${addZero(modelValue.getDate())}` }}</span>
 </template>
-<script>
-
+<script lang="ts">
 export default {
-props: ["modelValue"],
-    methods :{
-            addZero(i){
-        return i < 10 ? '0' + i : i
+    // props: ["modelValue"],
+    props: {
+        modelValue: {
+            type: Date,
+            default: new Date()
+        }
+    },
+    methods: {
+        addZero(i) {
+            return i < 10 ? '0' + i : i
         },
     }
 }
