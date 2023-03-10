@@ -132,6 +132,7 @@ export default {
   transition: all 0.175s ease;
   overflow: hidden;
   opacity: 0;
+
 }
 
 .late.expand-enter-active {
@@ -149,7 +150,7 @@ export default {
 
 .expand-enter,
 .expand-leave-to {
-  height: 0;
+  /* height: 0; */
   opacity: 0;
 }
 </style>
