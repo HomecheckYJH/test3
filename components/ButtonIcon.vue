@@ -7,8 +7,8 @@
 import { defineComponent } from 'vue';
 export default defineComponent({
     props: {
-        align: String,
-        icon: String
+        align: { type: String, default: 'center' },
+        icon: {type: String, default: 'close'}
     },
     setup(props) {
         function toIcon(icon: any): string {
