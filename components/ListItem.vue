@@ -36,7 +36,7 @@ export default ({
             default: {
                 label: "Label",
                 description: "Description",
-                imgs: [],
+                imgs: ['img1','img2'],
                 actions: []
             }
         }
