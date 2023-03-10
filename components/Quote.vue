@@ -3,6 +3,7 @@
         <i class='bx bxs-quote-alt-left'></i>
         <div>
             <slot />
+            <span>내용입니다</span>
         </div>
         <i class='bx bxs-quote-alt-right'></i>
     </div>
