@@ -132,7 +132,7 @@
    --padding-content : 12px 20px;
    --padding-content-variable : 15px 30px;
     --radius : 4px;
-    --logo : url("~/assets/img/logo_.png");
+    --logo : url("./assets/img/logo_.png");
     --user : url("~/assets/img/user.png");
 }
 
@@ -419,8 +419,8 @@ hr.no-gap {
     font-family: boxicons;
     font-weight: 400;
     font-style: normal;
-    src: url(~/assets/fonts/boxicons.eot);
-    src: url(~/assets/fonts/boxicons.eot) format('embedded-opentype'), url(~/assets/fonts/boxicons.woff2) format('woff2'), url(~/assets/fonts/boxicons.woff) format('woff'), url(~/assets/fonts/boxicons.ttf) format('truetype'), url(~/assets/fonts/boxicons.svg) format('svg')
+    src: url(./assets/fonts/boxicons.eot);
+    src: url(./assets/fonts/boxicons.eot) format('embedded-opentype'), url(./assets/fonts/boxicons.woff2) format('woff2'), url(./assets/fonts/boxicons.woff) format('woff'), url(./assets/fonts/boxicons.ttf) format('truetype'), url(./assets/fonts/boxicons.svg) format('svg')
 }
 
 .bx {
