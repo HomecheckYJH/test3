@@ -1,6 +1,10 @@
 <template>
-    <div class="UItabs" v-show="modelValue == item" v-for="(item, i) in Array.from(Array(10).keys())" :key="i"
-        :class="[`tab-${i}`]" style="overflow-y: auto;" :style="{ 'flex': modelValue == item ? '1' : '0' }">
+    <div class="UItabs" 
+    v-show="modelValue == item" 
+    v-for="(item, i) in Array.from(Array(10).keys())" 
+    :key="i"
+        :class="[`tab-${i}`]" style="overflow-y: auto;" 
+        :style="{ 'flex': modelValue == item ? '1' : '0' }">
         <slot :name="item" />
     </div>
 </template>
@@ -9,7 +13,8 @@ export default {
     props: ["modelValue"],
     data() {
         return {
-            previous_index: -1
+            previous_index: -1,
+            items: ["Tab 1", "Tab 2", "Tab 3", "Tab 4", "Tab 5"] // 더미 데이터추가
         }
     },
     watch: {
