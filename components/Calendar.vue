@@ -73,24 +73,24 @@ export default {
     }
   },
   methods: {
-    getFormatDate(year:any, month:any, day:any):string {
+    getFormatDate(year: any, month: any, day: any): string {
       month = month >= 10 ? month : "0" + month;
       day = day >= 10 ? day : "0" + day;
       return year + "-" + month + "-" + day;
     },
     addZero(i: number): any {
       return i < 10 ? '0' + i : i
-    },  
-    nextMonth():void {
+    },
+    nextMonth(): void {
       let result = new Date(this.modelValue.setMonth(this.modelValue.getMonth() + 1));
       result.setDate(1);
-      this.$emit("update:modelValue", result);
+      // this.$emit("update:modelValue", result);
       this.modelValue = result;
     },
-    prevMonth():void {
+    prevMonth(): void {
       let result = new Date(this.modelValue.setMonth(this.modelValue.getMonth() - 1));
       result.setDate(1);
-      this.$emit("update:modelValue", result);
+      // this.$emit("update:modelValue", result);
       this.modelValue = result;
     }
   },
@@ -123,8 +123,8 @@ export default {
       let prevMonthLastDate = prevLastDate;
 
       let day = 1;
-      let prevDay:any = prevMonthLastDate - monthFirstDay + 1;
-      let local_dates:Array<Array<number>> = [];
+      let prevDay: any = prevMonthLastDate - monthFirstDay + 1;
+      let local_dates: Array<Array<number>> = [];
       let weekOfDays: Array<number> = [];
       while (day <= monthLastDate) {
         if (day === 1) {
