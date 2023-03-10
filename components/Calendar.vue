@@ -82,16 +82,25 @@ export default {
       return i < 10 ? '0' + i : i
     },
     nextMonth(): void {
-      let result = new Date(this.modelValue.setMonth(this.modelValue.getMonth() + 1));
-      result.setDate(1);
-      // this.$emit("update:modelValue", result);
-      this.modelValue = result;
+      // let result = new Date(this.modelValue.setMonth(this.modelValue.getMonth() + 1));
+      // result.setDate(1);
+      // // this.$emit("update:modelValue", result);
+      // this.modelValue = result;
+
+      const newDate = new Date(this.modelValue)
+  newDate.setMonth(newDate.getMonth() + 1)
+  newDate.setDate(1)
+  this.modelValue = newDate
     },
     prevMonth(): void {
-      let result = new Date(this.modelValue.setMonth(this.modelValue.getMonth() - 1));
-      result.setDate(1);
-      // this.$emit("update:modelValue", result);
-      this.modelValue = result;
+      // let result = new Date(this.modelValue.setMonth(this.modelValue.getMonth() - 1));
+      // result.setDate(1);
+      // // this.$emit("update:modelValue", result);
+      // this.modelValue = result;
+      const newDate = new Date(this.modelValue)
+  newDate.setMonth(newDate.getMonth() - 1)
+  newDate.setDate(1)
+  this.modelValue = newDate
     }
   },
   computed: {
