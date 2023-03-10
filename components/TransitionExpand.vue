@@ -20,14 +20,14 @@ export default {
 },
   methods: {
     enter(element: any): void {
-      const width = getComputedStyle(element).width;
+      const width:string = getComputedStyle(element).width;
 
       element.style.width = width;
       element.style.position = "absolute";
       element.style.visibility = "hidden";
       element.style.height = "auto";
 
-      const height = getComputedStyle(element).height;
+      const height:string = getComputedStyle(element).height;
 
       element.style.width = null;
       element.style.position = null;
