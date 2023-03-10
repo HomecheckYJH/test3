@@ -42,7 +42,6 @@
       </div>
     </div>
 
-
   </div>
 </template>
 <script lang="ts">
@@ -82,23 +81,22 @@ export default {
       return i < 10 ? '0' + i : i
     },
     nextMonth(): void {
-      // let result = new Date(this.modelValue.setMonth(this.modelValue.getMonth() + 1));
-      // result.setDate(1);
-      // // this.$emit("update:modelValue", result);
-      // this.modelValue = result;
-
       let result = new Date(this.modelValue.setMonth(this.modelValue.getMonth() + 1));
-  result.setDate(1);
-  this.$emit("update:modelValue", result);
+      result.setDate(1);
+      // this.$emit("update:modelValue", result);
+      this.modelValue = result;
+      //     let result = new Date(this.modelValue.setMonth(this.modelValue.getMonth() + 1));
+      // result.setDate(1);
+      // this.$emit("update:modelValue", result);
     },
     prevMonth(): void {
-      // let result = new Date(this.modelValue.setMonth(this.modelValue.getMonth() - 1));
-      // result.setDate(1);
-      // // this.$emit("update:modelValue", result);
-      // this.modelValue = result;
       let result = new Date(this.modelValue.setMonth(this.modelValue.getMonth() - 1));
-  result.setDate(1);
-  this.$emit("update:modelValue", result);
+      result.setDate(1);
+      // this.$emit("update:modelValue", result);
+      this.modelValue = result;
+      //     let result = new Date(this.modelValue.setMonth(this.modelValue.getMonth() - 1));
+      // result.setDate(1);
+      // this.$emit("update:modelValue", result);
     }
   },
   computed: {

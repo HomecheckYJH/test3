@@ -7,11 +7,29 @@
 </template>
 <script>
 export default {
-  props: ["modelValue", "mode", "default"],
+  // props: ["modelValue", "mode", "default"],
+  props: {
+    modelValue: {
+      type: Object,
+      default: {}
+    },
+    mode: {
+      type: Array,
+      default: []
+    },
+    default: {
+      type: Object,
+      default: {
+        property: '',
+        value: ''
+      }
+    }
+  },
   emits: ["update:modelValue", "onChanged"],
   data() {
     return {
-      index: -1,
+      // index: -1,
+      index: 0,
       prevent: false,
     }
   },
