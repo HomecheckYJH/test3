@@ -14,12 +14,12 @@
     </div>
 </template>
 <script>
-import VWave from 'v-wave'
+// import VWave from 'v-wave'
 
 export default {
-  directives: {
-    wave: VWave,
-  },
+//   directives: {
+//     wave: VWave,
+//   },
 
 // props: ["modelValue"],
     props: {
