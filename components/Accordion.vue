@@ -91,7 +91,14 @@ export default {
       if (this.prevent) {
         return;
       }
-      if (this.options.onlyPreviewOpen == bool) {
+      // if (this.options.onlyPreviewOpen == bool) {
+      //   this.prevent = true;
+      //   this.open = !this.open;
+      //   setTimeout(() => {
+      //     this.prevent = false
+      //   }, 1200)
+      // }
+      if (true) {
         this.prevent = true;
         this.open = !this.open;
         setTimeout(() => {
