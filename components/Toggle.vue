@@ -1,27 +1,47 @@
 <template>
-    <div v-wave @click="change" class="toggle" :class="modelValue ? 'active' : ''">
+    <div v-wave 
+    @click="change" class="toggle" :class="modelValue ? 'active' : ''">
         <span v-show="modelValue" class="true" :class="modelValue ? 'active' : ''">
         <slot name="true"/>
+        <div>true 상태</div>
         </span>
+        <!-- modelValue가 true일때 true 클래스를 사용하고 false일때 false 클래스를 사용한다. -->
+
         <span v-show="!modelValue" class="false" :class="modelValue ? '' : 'active'">
         <slot name="false"/>
+        <div>false 상태</div>
         </span>
     </div>
 </template>
 <script>
-export default{
-props: ["modelValue"],
+import VWave from 'v-wave'
+
+export default {
+  directives: {
+    wave: VWave,
+  },
+
+// props: ["modelValue"],
+    props: {
+        modelValue: {
+        type: Boolean,
+        default: true
+        }
+    },
   emits: ["update:modelValue"],
   methods:{
-      change(){
-          if(this.modelValue)
-          {
-      this.$emit("update:modelValue", false);
-          }
-          else{
-              this.$emit("update:modelValue", true);
-          }
-      }
+    //   change(){
+    //       if(this.modelValue)
+    //       {
+    //   this.$emit("update:modelValue", false);
+    //       }
+    //       else{
+    //           this.$emit("update:modelValue", true);
+    //       }
+    //   }
+    change() {
+      this.modelValue = !this.modelValue;
+    }
   }
 }
 </script>
