@@ -10,7 +10,13 @@
 </template>
 <script>
 export default {
-    props: ["modelValue"],
+    // props: ["modelValue"],
+    props: {
+    modelValue: {
+      type: Number,
+      default: 0
+    }
+  },
     data() {
         return {
             previous_index: -1,
