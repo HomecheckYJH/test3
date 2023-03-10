@@ -7,7 +7,17 @@
 </template>
 <script>
 export default{
-    props : ['content', 'type']
+    // props : ['content', 'type']
+    props: {
+        content: {
+            type: String,
+            default: 'Tag컴포넌트입니다'
+        },
+        type: {
+            type: String,
+            default: ''
+        }
+    }
 }
 </script>
 <style scoped>
