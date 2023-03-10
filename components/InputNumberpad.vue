@@ -9,7 +9,8 @@
                 <div v-for="item in [1, 2, 3, 4, 5, 6, 7, 8, 9]" @click="InputKey(item)" :key="item" v-wave class="keypad">
                     {{ item }}
                 </div>
-                <div @click="allowPoint ? InputKey('.') : null" v-wave class="keypad">
+                <div @click="allowPoint ? InputKey('.') : null" 
+                v-wave class="keypad">
                     {{ allowPoint ? '.' : '' }}
                 </div>
                 <div @click="InputKey(0)" v-wave class="keypad">
@@ -30,6 +31,10 @@
 <script setup>
 import { ref, watch } from 'vue'
 import { onClickOutside } from '@vueuse/core'
+import VWave from 'v-wave'
+const { vWave } = VWave.createLocalWaveDirective
+
+
 const props = defineProps({
     modelValue: Number,
     align: {
