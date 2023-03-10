@@ -16,15 +16,19 @@
             </span>
         </div> -->
         <div class="list-item-icons d-f center">
-            <UIButtonIcon v-for="(action, action_id) in item.actions" :key="action_id" align="center" :icon="action.icon"
+            <ButtonIcon v-for="(action, action_id) in item.actions" :key="action_id" align="center" :icon="action.icon"
                 @click="action.command" />
         </div>
     </div>
 </template>
 <script>
+import ButtonIcon from './ButtonIcon.vue'
 
 export default ({
     name: "ListItem",
+    components: {
+        ButtonIcon
+  },
     props: ['item'],
     data() {
         return {
