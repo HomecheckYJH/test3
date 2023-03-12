@@ -1,7 +1,10 @@
 <template>
     <div class="list">
         <div class="list-items">
-            <ListItem v-for="(item, i) in items" :key="i" :item="item" @onChanged="onChanged" />
+            <ListItem v-for="(item, i) in items"
+            :key="i" 
+            :item="item" 
+            @onChanged="onChanged" />
             <ListItem />
         </div>
     </div>
@@ -20,8 +23,8 @@ export default {
     // props: ["items"],
     props: {
         items: {
-            type: Array,
-            default: () => [1,2,3,4]
+            type: Object,
+            default: () => ({})
         }
     },
     setup(props) {
