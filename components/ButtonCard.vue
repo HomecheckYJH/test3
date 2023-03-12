@@ -33,12 +33,12 @@ export default {
 
   // props: ['type', 'to', 'title', 'disabled', 'click', 'dev'],
   props: {
-    type: String,
-    to: String,
-    title: String,
-    disabled: Boolean,
-    click: Function,
-    dev: Boolean,
+    type: { type: String, default: 'inline' },
+    to: { type: String, default: '' },
+    title: { type: String, default: '' },
+    disabled: { type: Boolean, default: true },
+    click: {type: Function, default: null},
+    dev: { type: Boolean, default: false},
   },
 
   methods: {
