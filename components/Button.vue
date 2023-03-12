@@ -58,14 +58,16 @@ export default {
 
 
 <template>
-  <div class="button" :class="[type ? type : '', size ? size : '', size == 'md' ? 'common-border-8' : '']"
-    @click="click_event()" v-wave="waveeffect">
+  <div class="button" 
+  :class="[type ? type : '', size ? size : '', size == 'md' ? 'common-border-8' : '']"
+    @click="click_event()" 
+    v-wave="waveeffect">
     <span>
-      <slot />버튼
+      <slot />클릭해보세요
     </span>
   </div>
 </template>
-<script>
+<script lang="ts">
 import VWave from 'v-wave'
 const { wave } = VWave.createLocalWaveDirective({})
 
@@ -77,7 +79,7 @@ export default {
   props: {
     type: {
       type: String,
-      default: ''
+      default: 'link'
     },
     to: {
       type: String,
@@ -93,7 +95,7 @@ export default {
     default: null
   },
   computed: {
-    waveeffect() {
+    waveeffect():object {
       switch (this.type) {
         case 'white':
           return {
@@ -121,7 +123,7 @@ export default {
   //   }
   // }
   methods: {
-    click_event() {
+    click_event():void {
       alert('클릭 발생')
     }
   }
