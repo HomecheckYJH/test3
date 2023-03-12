@@ -4,13 +4,13 @@ import { createApp } from 'vue';
 import VWave from 'v-wave'
 import 'boxicons';
 // import { vuetify } from 'vuetify'
-import 'vuetify/dist/vuetify.css'
-import * as vuetify from 'vuetify/lib/framework'
+// import 'vuetify/dist/vuetify.css'
+// import * as vuetify from 'vuetify/lib/framework'
 
 const app = createApp({})
 
 app.use(VWave);
-app.use(vuetify)
+// app.use(vuetify)
 
 // app.use(VWave)
 // app.use(VWave, {})
