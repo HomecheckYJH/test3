@@ -44,7 +44,7 @@ const emit = defineEmits(["update:modelValue", "onChanged"]);
 const props = defineProps({
   items: {
     type: Array,
-    default: [],
+    default: ["안녕", "하세요", "반갑습니다"],
   },
   modelValue: {
     type: [Array, Object, String],

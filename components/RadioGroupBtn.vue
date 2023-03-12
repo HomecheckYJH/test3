@@ -24,7 +24,7 @@ export default {
   props: {
     items: {
       type: Array,
-      default: () => [],
+      default: () => [123,456,789],
     },
     modelValue: {
       type: Number,
