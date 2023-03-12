@@ -9,22 +9,16 @@ import * as vuetify from 'vuetify/lib/framework'
 
 
 
-import App from './App.vue';
-
-const app = createApp(App);
-
 app.use(VWave);
 
-app.mount('#app');
 
 
 
-// const app = createApp({})
+const app = createApp({})
 app.use(vuetify)
 
 // app.use(VWave)
 // app.use(VWave, {})
-app.use(VWave)
 // app.directive('wave', VWave);
 
 import { default as Accordion } from './components/Accordion.vue';
