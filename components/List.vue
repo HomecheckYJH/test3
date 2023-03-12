@@ -9,9 +9,9 @@
         </div>
     </div>
 </template>
-<script>
+<script lang="ts">
 // import _ from 'lodash'
-import * as _ from 'lodash'
+// import * as _ from 'lodash'
 import ListItem from './ListItem.vue'
 
 export default {
@@ -27,8 +27,8 @@ export default {
             default: () => ({})
         }
     },
-    setup(props) {
-        function onChanged(received) {
+    setup(props: any): any {
+        function onChanged(received: any): void {
             console.log(received)
         }
         return { onChanged }
