@@ -12,8 +12,14 @@
   </div>
 </template>
 <script lang="ts">
+import VWave from 'v-wave'
+const { wave } = VWave.createLocalWaveDirective({})
+
 
 export default {
+  directives: {
+        wave,
+    },
   // props: ["items", "modelValue", "size"],
   props: {
     items: {

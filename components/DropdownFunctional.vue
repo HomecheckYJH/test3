@@ -37,6 +37,8 @@ import * as _ from 'lodash';
 /////////////////////////////
 import { computed, reactive, ref } from 'vue';
 /////////////////////////////
+import VWave from 'v-wave'
+const { vWave } = VWave.createLocalWaveDirective({})
 
 const emit = defineEmits(["update:modelValue", "onChanged"]);
 const props = defineProps({

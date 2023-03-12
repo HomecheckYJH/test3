@@ -66,7 +66,13 @@ export default {
   </div>
 </template>
 <script>
+import VWave from 'v-wave'
+const { wave } = VWave.createLocalWaveDirective({})
+
 export default {
+  directives: {
+    wave,
+  },
   // props: ['type', 'to', 'size', 'click'],
   props: {
     type: {
@@ -81,11 +87,11 @@ export default {
       type: String,
       default: ''
     },
-    },
-    click: {
-      type: Function,
-      default: null
-    },
+  },
+  click: {
+    type: Function,
+    default: null
+  },
   computed: {
     waveeffect() {
       switch (this.type) {
