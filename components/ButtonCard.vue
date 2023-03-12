@@ -23,13 +23,14 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import VWave from 'v-wave'
+const { wave } = VWave.createLocalWaveDirective({})
 
 export default {
   directives: {
-    wave: VWave,
-  },
+        wave,
+    },
 
   // props: ['type', 'to', 'title', 'disabled', 'click', 'dev'],
   props: {
@@ -42,7 +43,7 @@ export default {
   },
 
   methods: {
-    click_event() {
+    click_event(click) {
     // async click_event(fun) {
       // if (fun instanceof Function) {
 
