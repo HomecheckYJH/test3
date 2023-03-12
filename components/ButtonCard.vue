@@ -42,12 +42,13 @@ export default {
   },
 
   methods: {
-    async click_event(fun) {
-      if (fun instanceof Function) {
+    click_event() {
+    // async click_event(fun) {
+      // if (fun instanceof Function) {
 
-        await fun()
-      }
-
+      //   await fun()
+      // }
+        alert('클릭하셨습니다');
     }
   }
 }
