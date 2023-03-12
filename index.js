@@ -7,14 +7,9 @@ import 'boxicons';
 import 'vuetify/dist/vuetify.css'
 import * as vuetify from 'vuetify/lib/framework'
 
-
+const app = createApp({})
 
 app.use(VWave);
-
-
-
-
-const app = createApp({})
 app.use(vuetify)
 
 // app.use(VWave)
