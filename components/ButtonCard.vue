@@ -37,7 +37,7 @@ export default {
     type: { type: String, default: 'inline' },
     to: { type: String, default: '' },
     title: { type: String, default: '' },
-    disabled: { type: Boolean, default: true },
+    disabled: { type: Boolean, default: false },
     click: {type: Function, default: null},
     dev: { type: Boolean, default: false},
   },
