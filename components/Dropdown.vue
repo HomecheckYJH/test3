@@ -27,8 +27,16 @@ import { ref, reactive, onMounted } from 'vue'
 // import { ref, reactive } from 'vue'
 import { onClickOutside } from '@vueuse/core'
 
+import VWave from 'v-wave'
+const { wave } = VWave.createLocalWaveDirective({})
+
+
+
 
 export default {
+  directives: {
+    wave,
+  },
   // props: ["items", "modelValue", "align"],
   props: {
     items: {

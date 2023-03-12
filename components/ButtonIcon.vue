@@ -4,15 +4,15 @@
     </div>
 </template>
 <script lang="ts">
-// import VWave from 'v-wave'
-// const { wave } = VWave.createLocalWaveDirective({/* global options */})
+import VWave from 'v-wave'
+const { wave } = VWave.createLocalWaveDirective({})
 
 
 import { defineComponent } from 'vue';
 export default defineComponent({
-//     directives: {
-//       wave,
-//   },
+    directives: {
+      wave,
+  },
     props: {
         align: { type: String, default: '' },
         icon: { type: String, default: 'edit' }
