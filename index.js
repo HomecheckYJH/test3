@@ -1,5 +1,5 @@
 import './css/globalcss.css';
-import '../assets/img/logo_lg.png'
+import './assets/img/logo_lg.png'
 import { createApp } from 'vue';
 import VWave from 'v-wave'
 import 'boxicons';
