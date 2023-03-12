@@ -1,1 +1,1 @@
-declare module 'yjhlib';
+declare module 'hckui';

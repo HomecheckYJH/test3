@@ -99,6 +99,4 @@ app.component('TransitionExpand', TransitionExpand);
 
 export { Accordion, AnimationSpinner, AnimationStatus, Autocomplete, Button, ButtonCard, ButtonIcon, Calendar, Card, Context, Date, Dropdown, DropdownFunctional, Frame, Grid, Hint, HintWrap, InputNumberpad, List, ListItem, Markdown, OverlayDrawer, OverlayDrawerFrame, OverlayIndicator, OverlayModal, OverlayNotifications, Placeholder, Quote, RadioGroupBtn, Step, Tab, TabContent, Tag, Toggle, ToggleMode, TranshesCheckAccordion, TransitionExpand, AutocompleteSelect, Logo };
 
-// Logo,Filedrop,
-
-//
+// Filedrop
