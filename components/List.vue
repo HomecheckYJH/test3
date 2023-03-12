@@ -9,15 +9,21 @@
 <script>
 // import _ from 'lodash'
 import * as _ from 'lodash'
-// import ListItem from './ListItem.vue'
+import ListItem from './ListItem.vue'
 
 export default {
-//     name: 'List',
-//     components: {
-//     ListItem
-// },
+    name: 'List',
+    components: {
+        ListItem
+    },
 
-    props: ["items"],
+    // props: ["items"],
+    props: {
+        items: {
+            type: Array,
+            default: () => [1,2,3,4]
+        }
+    },
     setup(props) {
         function onChanged(received) {
             console.log(received)

@@ -43,7 +43,8 @@ export default {
   },
 
   methods: {
-    click_event(click) {
+    click_event(click: Function):void {
+
     // async click_event(fun) {
       // if (fun instanceof Function) {
 

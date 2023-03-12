@@ -31,9 +31,9 @@
     </div>
 </template>
 <script setup>
-const notification_List = useNotifications().notifications
-const current_notification_id = ref('')
-const touch_active = ref(false)
+const notification_List = useNotifications().notifications;
+const current_notification_id = ref('');
+const touch_active = ref(false);
 
 function touch(obj, bool, action) {
     current_notification_id.value = obj.id;
@@ -229,4 +229,5 @@ function touch(obj, bool, action) {
 .notification-leave-from {
     transform: translateX(0);
     opacity: 1;
-}</style>
+}
+</style>
