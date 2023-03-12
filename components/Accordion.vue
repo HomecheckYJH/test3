@@ -46,8 +46,14 @@
 </template>
 <script lang="ts">
 import TransitionExpand from './TransitionExpand.vue'
+import VWave from 'v-wave'
+const { wave } = VWave.createLocalWaveDirective({})
+
 
 export default {
+  directives: {
+        wave,
+    },
   // props: ["type", "opened", "options"],
   name: 'Accordion',
   components: {
