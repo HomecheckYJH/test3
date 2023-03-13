@@ -11,9 +11,11 @@
   </div>
 </template>
 <script>
+import logo from '../assets/img/logo_lg.png'
 export default {
+    name: 'Logo',
 	data : ()=>({
-    	img : require('../assets/img/logo_lg.png')
+    	img : logo
     })
 }
 
