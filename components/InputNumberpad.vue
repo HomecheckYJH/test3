@@ -31,8 +31,10 @@
 <script setup>
 import { ref, watch } from 'vue'
 import { onClickOutside } from '@vueuse/core'
+
 import VWave from 'v-wave'
-const { vWave } = VWave.createLocalWaveDirective
+const { vWave, vWaveTrigger } = VWave.createLocalWaveDirective({})
+
 
 
 const props = defineProps({
