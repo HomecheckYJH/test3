@@ -1,7 +1,7 @@
 <template>
   <div class="d-f hck-logo-component">
     <!-- <img class="hck-logo" src="../assets/img/logo_lg.png"> -->
-    <img :src="image" alt="image">
+    <img :src="ImageData" alt="image">
     
       
     <div class="logo-text">
@@ -21,7 +21,7 @@ export default {
     },
   },
   computed: {
-    imageSource() {
+    ImageData() {
       const binaryString = window.atob(this.image);
       const binaryLen = binaryString.length;
       const bytes = new Uint8Array(binaryLen);
