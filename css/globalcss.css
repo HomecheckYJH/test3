@@ -132,8 +132,11 @@
    --padding-content : 12px 20px;
    --padding-content-variable : 15px 30px;
     --radius : 4px;
-    --logo : url("../assets/img/logo_.png");
-    --user : url("../assets/img/user.png");
+    /* --logo : url("../assets/img/logo_.png");
+    --user : url("../assets/img/user.png"); */
+    --logo : url("../assets/img/logo_lg.png");
+    --user : url("../assets/img/logo_lg.png");
+    /*오류가 떠서 임시로 수정*/
 }
 
 #app-renderer.dev {
