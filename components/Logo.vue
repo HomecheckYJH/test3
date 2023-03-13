@@ -2,7 +2,7 @@
   <div class="d-f hck-logo-component">
     <!-- <img class="hck-logo" src="../assets/img/logo_lg.png"> -->
     <!-- <img :src="Image" alt="image"> -->
-    <img src="../assets/images/image.jpg" alt="My Image">
+    <img src="../assets/img/logo_lg.png" alt="My Image">
     
       
     <div class="logo-text">
