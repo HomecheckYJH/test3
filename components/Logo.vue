@@ -1,7 +1,7 @@
 <template>
   <div class="d-f hck-logo-component">
     <!-- <img class="hck-logo" src="../assets/img/logo_lg.png"> -->
-    <img class="hck-logo" src="https://homecheck.kr/img/common/logo_o.png">
+    <img :src="image" alt="image">
     
       
     <div class="logo-text">
@@ -10,7 +10,31 @@
     </div>
   </div>
 </template>
-<script setup>
+<script>
+
+export default {
+  name: "Logo",
+  props: {
+    image: {
+      type: String,
+      required: true,
+    },
+  },
+  computed: {
+    imageSource() {
+      const binaryString = window.atob(this.image);
+      const binaryLen = binaryString.length;
+      const bytes = new Uint8Array(binaryLen);
+      for (let i = 0; i < binaryLen; i++) {
+        bytes[i] = binaryString.charCodeAt(i);
+      }
+      const blob = new Blob([bytes], { type: "../assets/img/logo_lg.png" });
+      return URL.createObjectURL(blob);
+    },
+  },
+};
+
+
 
 </script>
 <style scoped>
