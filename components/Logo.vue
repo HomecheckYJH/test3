@@ -1,7 +1,8 @@
 <template>
   <div class="d-f hck-logo-component">
     <!-- <img class="hck-logo" src="../assets/img/logo_lg.png"> -->
-    <img :src="Image" alt="image">
+    <!-- <img :src="Image" alt="image"> -->
+    <img src="../assets/images/image.jpg" alt="My Image">
     
       
     <div class="logo-text">
@@ -11,14 +12,6 @@
   </div>
 </template>
 <script>
-import logo from '../assets/img/logo_lg.png'
-export default {
-    name: 'Logo',
-	data : ()=>({
-    	img : logo
-    })
-}
-
 
 
 </script>
